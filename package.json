@@ -1,17 +1,28 @@
 {
   "name": "solid-hammers",
   "version": "1.0.0",
-  "description": "A set of JS functions and classes for all occasions",
+  "description": "A set of JS functions and classes for all occasions, with TS support",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": "https://github.com/J3MPA/solid-hammers.git",
   "author": "Jens Karlsson <jens_karlsson95@hotmail.com>",
   "license": "MIT",
   "private": false,
+  "files": [
+    "**/*.js",
+    "**/*.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "tsc --noEmit false",
+    "postpublish": "tsc --build --clean"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.33",
     "jest": "^26.6.3",
     "ts-jest": "^26.5.3",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   }
 }
