@@ -7,8 +7,8 @@ yarn-error.log*
 lerna-debug.log*
 
 # Package build
-classes/
-functions/
+./classes/
+./functions/
 
 # Dependency directories
 node_modules/

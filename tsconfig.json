@@ -8,5 +8,5 @@
     "noEmit": true
   },
   "include": ["./lib/**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.config.ts"]
+  "exclude": ["node_modules", "**/*.spec.*", "**/*.config.ts"]
 }
