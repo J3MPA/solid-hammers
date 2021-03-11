@@ -1,4 +1,4 @@
-import { isRealPoint, isRealNumber } from './utils'
+import { isRealPoint, isRealNumber } from '../../utils'
 type RealNumber = number
 export class Vector2 {
   x: number

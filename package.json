@@ -15,8 +15,8 @@
   "scripts": {
     "build": "tsc",
     "test:unit": "jest",
-    "prepublishOnly": "tsc --noEmit false",
-    "postpublish": "tsc --build --clean && rm -rf classes functions"
+    "prepublishOnly": "./bin/pre-publish.sh",
+    "postpublish": "./bin/post-publish.sh"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
