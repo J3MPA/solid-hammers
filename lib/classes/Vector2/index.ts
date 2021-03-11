@@ -1,40 +1,36 @@
 import { isRealPoint, isRealNumber } from '../../utils'
+
 type RealNumber = number
+
 export class Vector2 {
-  x: number
-  y: number
+  x: RealNumber
+  y: RealNumber
 
-  constructor(x: number, y: number) {
-    if (isRealPoint(x, y)) {
-      this.x = x
-      this.y = y
-    } else throw new TypeError('Point must be a real number')
+  constructor(x: RealNumber, y: RealNumber) {
+    if (!isRealPoint(x, y)) throw new TypeError('Point must be a real number')
+
+    this.x = x
+    this.y = y
   }
 
-  public add(v: Vector2) {
-    return Vector2.sum(this, v)
+  public add(vector: Vector2) {
+    return Vector2.sum(this, vector)
   }
 
-  public take(v: Vector2) {
-    return Vector2.subtract(this, v)
+  public subtract(vector: Vector2) {
+    return Vector2.subtract(this, vector)
   }
 
-  public scale(s: number) {
-    if (isRealNumber(s)) {
-      return Vector2.scale(this, s)
-    } else throw new TypeError('Sclar must be a real number')
-  }
-
-  get normalized() {
-    return Vector2.normalize(this)
+  public scale(scalar: RealNumber) {
+    return Vector2.scale(this, scalar)
   }
 
   public normalize() {
     return Vector2.normalize(this)
   }
 
-  public magnitute(v: Vector2) {
-    return Vector2.distanceBetween(this, v)
+  public distanceTo(vector: Vector2) {
+    return Vector2.distanceBetween(this, vector)
   }
 
   public switchDirection() {
@@ -49,26 +45,28 @@ export class Vector2 {
     return new Vector2(-1 * this.x, this.y)
   }
 
-  static distanceBetween(v1: Vector2, v2: Vector2) {
-    const dx = v1.x - v2.x
-    const dy = v1.y - v2.y
+  static distanceBetween(vectorA: Vector2, vectorB: Vector2) {
+    const dx = vectorA.x - vectorB.x
+    const dy = vectorA.y - vectorB.y
     return Math.hypot(dx, dy)
   }
 
-  static sum(v1: Vector2, v2: Vector2) {
-    return new Vector2(v1.x + v2.x, v1.y + v2.y)
+  static sum(vectorA: Vector2, vectorB: Vector2) {
+    return new Vector2(vectorA.x + vectorB.x, vectorA.y + vectorB.y)
   }
 
-  static subtract(v1: Vector2, v2: Vector2) {
-    return new Vector2(v1.x - v2.x, v1.y - v2.y)
+  static subtract(vectorA: Vector2, vectorB: Vector2) {
+    return new Vector2(vectorA.x - vectorB.x, vectorA.y - vectorB.y)
   }
 
-  static scale(v: Vector2, s: number) {
-    return new Vector2(v.x * s, v.y * s)
+  static scale(vector: Vector2, scalar: RealNumber) {
+    if (!isRealNumber(scalar))
+      throw new TypeError('Scalar must be a real number')
+    return new Vector2(vector.x * scalar, vector.y * scalar)
   }
 
-  static normalize(v: Vector2) {
-    const normal = (v.y + v.x) / 2
+  static normalize(vector: Vector2) {
+    const normal = (vector.y + vector.x) / 2
     return new Vector2(normal, normal)
   }
 
@@ -92,12 +90,15 @@ export class Vector2 {
     return new Vector2(1, 0)
   }
 
-  static fromMagnitute(m: number) {
-    const xy = Math.sqrt(m ** 2 / 2)
-    return new Vector2(xy, xy)
+  static fromMagnitute(magnitute: RealNumber) {
+    if (!isRealNumber(magnitute))
+      throw new TypeError('Magnitute must be a real number')
+
+    const normal = Math.sqrt(magnitute ** 2 / 2)
+    return new Vector2(normal, normal)
   }
 
-  static isVector2(v: any) {
-    return v instanceof Vector2
+  static isVector2(vector: any) {
+    return vector instanceof Vector2
   }
 }

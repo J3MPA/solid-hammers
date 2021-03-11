@@ -1,13 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is instantiated with x value as Infinity 1`] = `"Point must be a real number"`;
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with x as a non real number 1`] = `"Point must be a real number"`;
 
-exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is instantiated with x value as NaN 1`] = `"Point must be a real number"`;
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with x as a non real number 2`] = `"Point must be a real number"`;
 
-exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is instantiated with y value as Infinity 1`] = `"Point must be a real number"`;
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with x as a non real number 3`] = `"Point must be a real number"`;
 
-exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is instantiated with y value as NaN 1`] = `"Point must be a real number"`;
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with x as a non real number 4`] = `"Point must be a real number"`;
 
-exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is not instantiated with x as Number 1`] = `"Point must be a real number"`;
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with x as a non real number 5`] = `"Point must be a real number"`;
 
-exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is not instantiated with y as Number 1`] = `"Point must be a real number"`;
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with x as a non real number 6`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with x as a non real number 7`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with y as a non real number 1`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with y as a non real number 2`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with y as a non real number 3`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with y as a non real number 4`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with y as a non real number 5`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with y as a non real number 6`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with y as a non real number 7`] = `"Point must be a real number"`;
+
+exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 1`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 2`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 3`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 4`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 5`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 6`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 7`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 1`] = `"Magnitute must be a real number"`;
+
+exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 2`] = `"Magnitute must be a real number"`;
+
+exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 3`] = `"Magnitute must be a real number"`;
+
+exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 4`] = `"Magnitute must be a real number"`;
+
+exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 5`] = `"Magnitute must be a real number"`;
+
+exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 6`] = `"Magnitute must be a real number"`;
+
+exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 7`] = `"Magnitute must be a real number"`;
+
+exports[`Vector2 static scale Sad path should throw TypeError if scalar is not a real number 1`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 static scale Sad path should throw TypeError if scalar is not a real number 2`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 static scale Sad path should throw TypeError if scalar is not a real number 3`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 static scale Sad path should throw TypeError if scalar is not a real number 4`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 static scale Sad path should throw TypeError if scalar is not a real number 5`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 static scale Sad path should throw TypeError if scalar is not a real number 6`] = `"Scalar must be a real number"`;
+
+exports[`Vector2 static scale Sad path should throw TypeError if scalar is not a real number 7`] = `"Scalar must be a real number"`;
