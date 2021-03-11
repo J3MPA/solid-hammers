@@ -6,9 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# Package build
-./classes/
-./functions/
+# TS build
+classes/
+functions/
+index.js
+index.d.ts
 
 # Dependency directories
 node_modules/

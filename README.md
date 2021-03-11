@@ -1,2 +1,3 @@
 # solid-hammers
-A set of JS tools for all occasions
+
+A set of JS functions and classes for all occasions, with TS support
