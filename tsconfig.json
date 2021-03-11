@@ -3,11 +3,11 @@
     "target": "ES5",
     "module": "CommonJS",
     "strict": true,
-    "outDir": ".",
+    "outDir": "./lib",
     "declaration": true,
     "sourceMap": false,
     "noEmit": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.config.ts"]
 }
