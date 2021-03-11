@@ -1,15 +1,14 @@
+import { isRealPoint, isRealNumber } from './utils'
+type RealNumber = number
 export class Vector2 {
   x: number
   y: number
 
   constructor(x: number, y: number) {
-    if (typeof x !== 'number' || typeof y !== 'number')
-      throw new TypeError('Value of x and y must be of type number')
-    if (Number.isNaN(x) || Number.isNaN(y))
-      throw new TypeError("Value of x and y can't be of type NaN")
-
-    this.x = x
-    this.y = y
+    if (isRealPoint(x, y)) {
+      this.x = x
+      this.y = y
+    } else throw new TypeError('Point must be a real number')
   }
 
   public add(v: Vector2) {
@@ -21,7 +20,9 @@ export class Vector2 {
   }
 
   public scale(s: number) {
-    return Vector2.scale(this, s)
+    if (isRealNumber(s)) {
+      return Vector2.scale(this, s)
+    } else throw new TypeError('Sclar must be a real number')
   }
 
   get normalized() {
