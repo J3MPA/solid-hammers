@@ -7,8 +7,9 @@ yarn-error.log*
 lerna-debug.log*
 
 # TS build
-classes/
-functions/
+./classes/
+./utils/
+./functions/
 index.js
 index.d.ts
 

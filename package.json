@@ -1,6 +1,6 @@
 {
   "name": "solid-hammers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A set of JS functions and classes for all occasions, with TS support",
   "repository": "https://github.com/J3MPA/solid-hammers.git",
   "author": "Jens Karlsson <jens_karlsson95@hotmail.com>",
@@ -15,8 +15,8 @@
   "scripts": {
     "build": "tsc",
     "test:unit": "jest",
-    "prepublishOnly": "tsc --noEmit false",
-    "postpublish": "tsc --build --clean && rm -rf classes functions"
+    "prepublishOnly": "./bin/pre-publish.sh",
+    "postpublish": "./bin/post-publish.sh"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
