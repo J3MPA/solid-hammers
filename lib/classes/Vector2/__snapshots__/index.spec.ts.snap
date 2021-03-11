@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is instantiated with x value as Infinity 1`] = `"Point must be a number"`;
+
+exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is instantiated with x value as NaN 1`] = `"Point must be a number"`;
+
+exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is instantiated with y value as Infinity 1`] = `"Point must be a number"`;
+
+exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is instantiated with y value as NaN 1`] = `"Point must be a number"`;
+
+exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is not instantiated with x as Number 1`] = `"Point must be a number"`;
+
+exports[`Vector2 Sad path constructor should trow TypeError if Vector2 is not instantiated with y as Number 1`] = `"Point must be a number"`;
