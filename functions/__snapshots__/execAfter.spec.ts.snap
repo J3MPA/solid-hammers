@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`execAfter Sad path should throw TypeError if nth time is not a real number 1`] = `"nthTime must be a real number"`;
+
+exports[`execAfter Sad path should throw TypeError if nth time is not a real number 2`] = `"nthTime must be a real number"`;
+
+exports[`execAfter Sad path should throw TypeError if nth time is not a real number 3`] = `"nthTime must be a real number"`;
+
+exports[`execAfter Sad path should throw TypeError if nth time is not a real number 4`] = `"nthTime must be a real number"`;
