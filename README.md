@@ -1,4 +1,4 @@
-# solid-hammers 1.0.6
+# solid-hammers 1.0.8
 
 A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
 
@@ -18,7 +18,7 @@ Using yarn:
 $ yarn add solid-hammers
 ```
 
-## Usage Node.JS
+## Using require
 
 ```javascript
 // Load entire lib
@@ -34,7 +34,7 @@ const Vector2 = require('solid-hammers/math/Vector2');
 const isTruthy = require('solid-hammers/functions/assert/isTruthy');
 ```
 
-## Usage TypeScript
+## Using import
 
 ```typescript
 // Load entire lib
