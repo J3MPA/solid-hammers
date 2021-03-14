@@ -61,7 +61,7 @@ A 2D vector class
 
 ### Assert
 
-### `falsy`
+### **`falsy`**
 
 > Evaluates if given value is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.
 
@@ -75,11 +75,11 @@ falsy(value)
 
 #### Parameters
 
-##### `value` the value to be checked
+> ##### `value` the value to be checked
 
 #### Return value
 
-##### `true` if the value is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy); otherwise, `false`
+> ##### `true` if `value` is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy); otherwise, `false`
 
 #### Examples
 
@@ -181,7 +181,7 @@ truthy(value)
 
 #### Return value
 
-> ##### `true` if the value is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy); otherwise, `false`
+> ##### `true` if `value` is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy); otherwise, `false`
 
 #### Examples
 
@@ -286,7 +286,7 @@ nullish(value)
 
 #### Return value
 
-> ##### `true` if the value is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
+> ##### `true` if `value` is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
 #### Examples
 
@@ -364,7 +364,7 @@ notNullish(value)
 
 #### Return value
 
-> ##### `true` if the value is not [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
+> ##### `true` if `value` is not [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
 #### Examples
 
