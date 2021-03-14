@@ -1,4 +1,4 @@
-# solid-hammers 1.0.2
+# solid-hammers 1.0.3
 
 A set of JS functions and classes for all occasions, with TS support
 
