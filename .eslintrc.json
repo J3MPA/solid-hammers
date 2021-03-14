@@ -1,0 +1,24 @@
+{
+  "env": {
+    "node": true
+  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-duplicate-imports": "error",
+    "no-use-before-define": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".d.ts", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "lib"]
+      }
+    }
+  }
+}
