@@ -10,8 +10,8 @@ lerna-debug.log*
 ./classes/
 ./utils/
 ./functions/
-index.js
-index.d.ts
+./index.js
+./index.d.ts
 
 # Dependency directories
 node_modules/
