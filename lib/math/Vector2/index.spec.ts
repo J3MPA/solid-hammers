@@ -1,4 +1,4 @@
-import { Vector2 } from '.'
+import Vector2 from '.'
 
 describe('Vector2', () => {
   describe('constructor', () => {

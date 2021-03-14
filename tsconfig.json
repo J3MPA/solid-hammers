@@ -8,6 +8,6 @@
     "sourceMap": false,
     "noEmit": true
   },
-  "include": ["./lib/**/*.ts"],
+  "include": ["./lib/**/*.ts", "types.ts"],
   "exclude": ["node_modules", "**/*.spec.*", "**/*.config.ts"]
 }

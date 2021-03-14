@@ -1,6 +1,6 @@
 {
   "name": "solid-hammers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A set of JS functions and classes for all occasions, with TS support",
   "repository": "https://github.com/J3MPA/solid-hammers.git",
   "author": "Jens Karlsson <jens_karlsson95@hotmail.com>",
@@ -16,6 +16,7 @@
     "lint": "eslint . --ext .ts",
     "build": "tsc",
     "test:unit": "jest",
+    "publish:dryrun": "npm publish --dry-run",
     "prepublishOnly": "./bin/pre-publish.sh",
     "postpublish": "./bin/post-publish.sh"
   },
