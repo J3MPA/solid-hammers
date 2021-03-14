@@ -407,3 +407,85 @@ notNullishOr('defaultValue', 0) // 0
 notNullishOr('defaultValue', null) // 'defaultValue'
 notNullishOr('defaultValue', undefined) // 'defaultValue'
 ```
+
+## Misc
+
+### `invokeAfter`
+
+Creates a function that invokes given fn after it have been called nth (or more times).
+Creates same behavior as [`invokeOn`](#invokeOn) if `invokedAfter` is called with `nthTime - 1`.
+
+#### Syntax
+
+```typescript
+invokeAfter(nthTime, fn)
+```
+
+#### Parameters
+
+##### `nthTime` (real number) the nth time of calls before fn is invoked
+
+##### `fn` the function to be invoked
+
+#### Return value
+
+##### new function with nth time call restriction
+
+#### Examples
+
+```typescript
+const log = invokeAfter(3, console.log)
+
+for (let i = 1; i <= 4; i++) {
+    console.log(i)
+    log('done')
+}
+
+// 1
+
+// 2
+
+// 3
+
+// 4
+// 'done'
+```
+
+### `invokeOn`
+
+Creates a function that invokes given fn on the nth call (and after).
+Creates same behavior as [`invokeAfter`](#invokeAfter) if `invokeOn` is called with `nthTime + 1`.
+
+#### Syntax
+
+```typescript
+invokeOn(nthTime, fn)
+```
+
+#### Parameters
+
+##### `nthTime` (real number) the nth time of calls before fn is invoked
+
+##### `fn` the function to be invoked
+
+#### Return value
+
+##### new function with nth time call restriction
+
+#### Examples
+
+```typescript
+const log = invokeOn(3, console.log)
+
+for (let i = 1; i <=3; i++) {
+    console.log(i)
+    log('done')
+}
+
+// 1
+
+// 2
+
+// 3
+// 'done'
+```

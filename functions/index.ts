@@ -1,3 +1,3 @@
 export * from './assert'
-export { default as execAfter } from './execAfter'
-export { default as execOn } from './execOn'
+export { default as invokeAfter } from './invokeAfter'
+export { default as invokeOn } from './invokeOn'
