@@ -1,1 +1,1 @@
-export { assert } from './assert'
+export * from './assert'
