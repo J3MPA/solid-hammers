@@ -1,4 +1,4 @@
-# solid-hammers 1.0.11
+# solid-hammers 1.0.12
 
 A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
 
@@ -20,7 +20,7 @@ $ yarn add solid-hammers
 
 ## Usage as a module
 
-```ts
+```es6
 // ES6
 
 import * as hammers from 'solid-hammers'
@@ -75,7 +75,7 @@ For TypeScript this function can be used as a type guard that strips any truthy 
 
 #### Syntax
 
-```ts
+```es6
 falsy(value)
 ```
 
@@ -91,7 +91,7 @@ falsy(value)
 
 #### Examples
 
-```ts
+```es6
 falsy(false) // true
 falsy('') // true
 falsy(0) // true
@@ -139,7 +139,7 @@ Adapts TypeScript naming convention for type guards.
 
 #### Syntax
 
-```ts
+```es6
 falsyOr(defaultValue, value)
 ```
 
@@ -157,7 +157,7 @@ falsyOr(defaultValue, value)
 
 #### Examples
 
-```ts
+```es6
 falsyOr('defaultValue', false) // false
 falsyOr('defaultValue', '') // ''
 falsyOr('defaultValue', 0) // 0
@@ -181,7 +181,7 @@ For TypeScript this function can be used as a type guard that strips any falsy t
 
 #### Syntax
 
-```ts
+```es6
 truthy(value)
 ```
 
@@ -197,7 +197,7 @@ truthy(value)
 
 #### Examples
 
-```ts
+```es6
 truthy(123) // true
 truthy(true) // true
 truthy('someString') // true
@@ -244,7 +244,7 @@ Adapts TypeScript naming convention for type guards.
 
 #### Syntax
 
-```ts
+```es6
 truthyOr(defaultValue, value)
 ```
 
@@ -262,7 +262,7 @@ truthyOr(defaultValue, value)
 
 #### Examples
 
-```ts
+```es6
 truthyOr('defaultValue', 123) // 123
 truthyOr('defaultValue', true) // true
 truthyOr('defaultValue', 'someString') // 'someString'
@@ -290,7 +290,7 @@ Promise.resolve({ data: () => 'data' }).then(assertFalsyOrReturnEmptyArray) // {
 
 #### Syntax
 
-```ts
+```es6
 nullish(value)
 ```
 
@@ -306,7 +306,7 @@ nullish(value)
 
 #### Examples
 
-```ts
+```es6
 nullish(null) // true
 nullish(undefined) // true
 
@@ -333,7 +333,7 @@ Evaluates if given value is a [nullish](https://developer.mozilla.org/en-US/docs
 
 #### Syntax
 
-```ts
+```es6
 nullishOr(defaultValue, value)
 ```
 
@@ -351,7 +351,7 @@ nullishOr(defaultValue, value)
 
 #### Examples
 
-```ts
+```es6
 nullishOr('defaultValue', null) // null
 nullishOr('defaultValue', undefined) // undefined
 
@@ -372,7 +372,7 @@ nullishOr('defaultValue', 0) // 'defaultValue'
 
 #### Syntax
 
-```ts
+```es6
 notNullish(value)
 ```
 
@@ -388,7 +388,7 @@ notNullish(value)
 
 #### Examples
 
-```ts
+```es6
 notNullish(123) // true
 notNullish(true) // true
 notNullish('someString') // true
@@ -415,7 +415,7 @@ Adapts TypeScript naming convention for type guards.
 
 #### Syntax
 
-```ts
+```es6
 notNullishOr(defaultValue, value)
 ```
 
@@ -433,7 +433,7 @@ notNullishOr(defaultValue, value)
 
 #### Examples
 
-```ts
+```es6
 notNullishOr('defaultValue', 123) // 123'
 notNullishOr('defaultValue', true) // true
 notNullishOr('defaultValue', 'someString') // 'someString'
@@ -457,7 +457,7 @@ notNullishOr('defaultValue', undefined) // 'defaultValue'
 
 #### Syntax
 
-```ts
+```es6
 invokeAfter(nthTime, fn)
 ```
 
@@ -475,7 +475,7 @@ invokeAfter(nthTime, fn)
 
 #### Examples
 
-```ts
+```es6
 const log = invokeAfter(3, console.log)
 
 for (let i = 1; i <= 4; i++) {
@@ -501,7 +501,7 @@ for (let i = 1; i <= 4; i++) {
 
 #### Syntax
 
-```ts
+```es6
 invokeUntil(nthTime, fn)
 ```
 
@@ -519,7 +519,7 @@ invokeUntil(nthTime, fn)
 
 #### Examples
 
-```ts
+```es6
 const log = invokeUntil(3, console.log)
 
 for (let i = 1; i <= 4; i++) {
@@ -547,7 +547,7 @@ for (let i = 1; i <= 4; i++) {
 
 #### Syntax
 
-```ts
+```es6
 invokeOn(nthTime, fn)
 ```
 
@@ -565,7 +565,7 @@ invokeOn(nthTime, fn)
 
 #### Examples
 
-```ts
+```es6
 const log = invokeOn(3, console.log)
 
 for (let i = 1; i <=4; i++) {
@@ -589,7 +589,7 @@ for (let i = 1; i <=4; i++) {
 
 #### Syntax
 
-```ts
+```es6
 invokeOnce(fn)
 ```
 
@@ -605,7 +605,7 @@ invokeOnce(fn)
 
 #### Examples
 
-```ts
+```es6
 const log = invokeOnce(console.log)
 
 for (let i = 1; i <=4; i++) {
