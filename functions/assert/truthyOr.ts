@@ -1,4 +1,4 @@
-import type { Truthy } from '../../../types'
+import type { Truthy } from '../../types'
 import truthy from './truthy'
 
 const truthyOr = <Value, DefaultValue>(

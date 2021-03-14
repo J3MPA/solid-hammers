@@ -1,4 +1,4 @@
-import type { Truthy } from '../../../types'
+import type { Truthy } from '../../types'
 
 const falsy = <Value>(
   value: Value | Truthy

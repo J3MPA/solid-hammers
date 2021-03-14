@@ -1,4 +1,4 @@
-import type { Nullish } from '../../../types'
+import type { Nullish } from '../../types'
 import nullish from './nullish'
 
 const notNullish = <Value>(

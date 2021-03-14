@@ -1,4 +1,4 @@
-import type { Nullish } from '../../../types'
+import type { Nullish } from '../../types'
 import notNullish from './notNullish'
 
 const notNullishOr = <Value, DefaultValue>(

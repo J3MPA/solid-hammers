@@ -1,4 +1,4 @@
-import type { Falsy } from '../../../types'
+import type { Falsy } from '../../types'
 import falsy from './falsy'
 
 const falsyOr = <Value, DefaultValue>(
