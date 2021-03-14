@@ -463,7 +463,7 @@ invokeAfter(nthTime, fn)
 
 #### Parameters
 
-> ##### `nthTime` (real number) the nth time of calls before fn is invoked
+> ##### `nthTime` (real number) the nth number of calls before fn is invoked
 >
 > ##### `fn` the function to be invoked
 
@@ -507,7 +507,7 @@ invokeUntil(nthTime, fn)
 
 #### Parameters
 
-> ##### `nthTime` (real number) the nth time of calls before fn is invoked
+> ##### `nthTime` (real number) the nth number of calls until fn will no longer be invoked
 >
 > ##### `fn` the function to be invoked
 
@@ -553,7 +553,7 @@ invokeOn(nthTime, fn)
 
 #### Parameters
 
-> ##### `nthTime` (real number) the nth time of calls before fn is invoked
+> ##### `nthTime` (real number) the nth number of calls before `fn` is invoked
 >
 > ##### `fn` the function to be invoked
 
