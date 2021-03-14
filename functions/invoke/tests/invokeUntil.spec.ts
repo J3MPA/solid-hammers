@@ -1,4 +1,4 @@
-import invokeUntil from './invokeUntil'
+import invokeUntil from '../invokeUntil'
 describe('invokeUntil', () => {
   describe('Happy path', () => {
     it('should invoke fn before nth calls', () => {

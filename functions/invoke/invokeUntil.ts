@@ -1,5 +1,5 @@
-import { isRealNumber } from '../math'
-import { Fn } from '../types'
+import { isRealNumber } from '../../math'
+import { Fn } from '../../types'
 
 const invokeUntil = <Func extends Fn>(nthTime: number, fn: Func) => {
   if (!isRealNumber(nthTime)) {

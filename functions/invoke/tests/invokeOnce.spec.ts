@@ -1,4 +1,4 @@
-import invokeOnce from './invokeOnce'
+import invokeOnce from '../invokeOnce'
 
 describe('invokeOnce', () => {
   describe('Happy path', () => {
