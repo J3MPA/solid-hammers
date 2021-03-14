@@ -1,13 +1,15 @@
 # solid-hammers 1.0.4
 
-A set of JS functions and classes for all occasions, with TS support
+A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
+
+`This package i still under development and will ship with more functions and classes with time`
 
 ## Installation
 
 Using npm:
 
 ```bash
-$ npm i --save solid-hammers
+$ npm i solid-hammers
 ```
 
 Using yarn:
