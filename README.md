@@ -1,4 +1,4 @@
-# solid-hammers 1.0.8
+# solid-hammers 1.0.9
 
 A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
 
@@ -18,30 +18,16 @@ Using yarn:
 $ yarn add solid-hammers
 ```
 
-## Using require
+## Usage as a module
 
-```javascript
-// Load entire lib
-const hammers = require('solid-hammers');
+```ts
+// ES6
 
-// Load method categories
-const assert = require('solid-hammers/functions/assert');
-const invoke = require('solid-hammers/functions/invoke');
-const functions = require('solid-hammers/functions');
-
-// Pick methods.
-const Vector2 = require('solid-hammers/math/Vector2');
-const isTruthy = require('solid-hammers/functions/assert/isTruthy');
-```
-
-## Using import
-
-```typescript
-// Load entire lib
 import * as hammers from 'solid-hammers'
-import { Vector2, invokeAfter, isTruthyOr } from 'solid-hammers'
+// or
+import { /* functions */ } from 'solid-hammers'
 
-// Load method categories
+// Pick method categories
 import * as assert from 'solid-hammers/functions/assert'
 import * as invoke from 'solid-hammers/functions/invoke'
 
@@ -51,11 +37,30 @@ import isTruthy from 'solid-hammers/functions/assert/isTruthy'
 import invokeUntil from 'solid-hammers/functions/invoke/invokeUntil'
 ```
 
+```js
+// ES5
+
+var hammers = require('solid-hammers');
+
+// Pick method categories
+var assert = require('solid-hammers/functions/assert');
+var invoke = require('solid-hammers/functions/invoke');
+var functions = require('solid-hammers/functions');
+
+// Pick methods.
+var Vector2 = require('solid-hammers/math/Vector2');
+var isTruthy = require('solid-hammers/functions/assert/isTruthy');
+```
+
+### Typescript support
+
+> solid-hammers works with TypeScript out of the box as it ships with local types that will be read when you import solid-hammers in your code.
+
 ## Math
 
 ### Vector2
 
-A 2D vector class
+> A 2D vector class
 
 ## Functions
 
@@ -63,13 +68,14 @@ A 2D vector class
 
 ### **`falsy`**
 
+
 > Evaluates if given value is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.
 
 For TypeScript this function can be used as a type guard that strips any truthy types from the evaluated value
 
 #### Syntax
 
-```typescript
+```ts
 falsy(value)
 ```
 
@@ -81,9 +87,11 @@ falsy(value)
 
 > ##### `true` if `value` is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy); otherwise, `false`
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 falsy(false) // true
 falsy('') // true
 falsy(0) // true
@@ -131,7 +139,7 @@ Adapts TypeScript naming convention for type guards.
 
 #### Syntax
 
-```typescript
+```ts
 falsyOr(defaultValue, value)
 ```
 
@@ -145,9 +153,11 @@ falsyOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 falsyOr('defaultValue', false) // false
 falsyOr('defaultValue', '') // ''
 falsyOr('defaultValue', 0) // 0
@@ -171,7 +181,7 @@ For TypeScript this function can be used as a type guard that strips any falsy t
 
 #### Syntax
 
-```typescript
+```ts
 truthy(value)
 ```
 
@@ -183,9 +193,11 @@ truthy(value)
 
 > ##### `true` if `value` is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy); otherwise, `false`
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 truthy(123) // true
 truthy(true) // true
 truthy('someString') // true
@@ -232,7 +244,7 @@ Adapts TypeScript naming convention for type guards.
 
 #### Syntax
 
-```typescript
+```ts
 truthyOr(defaultValue, value)
 ```
 
@@ -246,9 +258,11 @@ truthyOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 truthyOr('defaultValue', 123) // 123
 truthyOr('defaultValue', true) // true
 truthyOr('defaultValue', 'someString') // 'someString'
@@ -276,7 +290,7 @@ Promise.resolve({ data: () => 'data' }).then(assertFalsyOrReturnEmptyArray) // {
 
 #### Syntax
 
-```typescript
+```ts
 nullish(value)
 ```
 
@@ -288,9 +302,11 @@ nullish(value)
 
 > ##### `true` if `value` is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 nullish(null) // true
 nullish(undefined) // true
 
@@ -317,7 +333,7 @@ Evaluates if given value is a [nullish](https://developer.mozilla.org/en-US/docs
 
 #### Syntax
 
-```typescript
+```ts
 nullishOr(defaultValue, value)
 ```
 
@@ -331,9 +347,11 @@ nullishOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 nullishOr('defaultValue', null) // null
 nullishOr('defaultValue', undefined) // undefined
 
@@ -354,7 +372,7 @@ nullishOr('defaultValue', 0) // 'defaultValue'
 
 #### Syntax
 
-```typescript
+```ts
 notNullish(value)
 ```
 
@@ -366,9 +384,11 @@ notNullish(value)
 
 > ##### `true` if `value` is not [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 notNullish(123) // true
 notNullish(true) // true
 notNullish('someString') // true
@@ -395,7 +415,7 @@ Adapts TypeScript naming convention for type guards.
 
 #### Syntax
 
-```typescript
+```ts
 notNullishOr(defaultValue, value)
 ```
 
@@ -409,9 +429,11 @@ notNullishOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 notNullishOr('defaultValue', 123) // 123'
 notNullishOr('defaultValue', true) // true
 notNullishOr('defaultValue', 'someString') // 'someString'
@@ -435,7 +457,7 @@ notNullishOr('defaultValue', undefined) // 'defaultValue'
 
 #### Syntax
 
-```typescript
+```ts
 invokeAfter(nthTime, fn)
 ```
 
@@ -449,9 +471,11 @@ invokeAfter(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 const log = invokeAfter(3, console.log)
 
 for (let i = 1; i <= 4; i++) {
@@ -477,7 +501,7 @@ for (let i = 1; i <= 4; i++) {
 
 #### Syntax
 
-```typescript
+```ts
 invokeUntil(nthTime, fn)
 ```
 
@@ -491,9 +515,11 @@ invokeUntil(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 const log = invokeUntil(3, console.log)
 
 for (let i = 1; i <= 4; i++) {
@@ -521,7 +547,7 @@ for (let i = 1; i <= 4; i++) {
 
 #### Syntax
 
-```typescript
+```ts
 invokeOn(nthTime, fn)
 ```
 
@@ -535,9 +561,11 @@ invokeOn(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 const log = invokeOn(3, console.log)
 
 for (let i = 1; i <=4; i++) {
@@ -561,7 +589,7 @@ for (let i = 1; i <=4; i++) {
 
 #### Syntax
 
-```typescript
+```ts
 invokeOnce(fn)
 ```
 
@@ -573,9 +601,11 @@ invokeOnce(fn)
 
 > ##### new function with one time call restriction
 
+##### Available since: 1.0.5
+
 #### Examples
 
-```typescript
+```ts
 const log = invokeOnce(console.log)
 
 for (let i = 1; i <=4; i++) {
