@@ -536,3 +536,41 @@ for (let i = 1; i <=4; i++) {
 
 // 4
 ```
+
+### `invokeOnce`
+
+Creates a function that invokes given fn only the first time when called.
+
+#### Syntax
+
+```typescript
+invokeOnce(fn)
+```
+
+#### Parameters
+
+##### `fn` the function to be invoked
+
+#### Return value
+
+##### new function with one time call restriction
+
+#### Examples
+
+```typescript
+const log = invokeOnce(console.log)
+
+for (let i = 1; i <=4; i++) {
+    console.log(i)
+    log('done on', i)
+}
+
+// 1
+// 'done on 1'
+
+// 2
+
+// 3
+
+// 4
+```
