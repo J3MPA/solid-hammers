@@ -1,13 +1,15 @@
 # solid-hammers 1.0.4
 
-A set of JS functions and classes for all occasions, with TS support
+A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
+
+`This package i still under development and will ship with more functions and classes with time`
 
 ## Installation
 
 Using npm:
 
 ```bash
-$ npm i --save solid-hammers
+$ npm i solid-hammers
 ```
 
 Using yarn:
@@ -19,19 +21,37 @@ $ yarn add solid-hammers
 ## Usage Node.JS
 
 ```javascript
-// Load the full build.
+// Load entire lib
 const hammers = require('solid-hammers');
 
-// Load specific method categories.
-const math = require('solid-hammers/math');
-const fns = require('solid-hammers/functions');
+// Load method categories
+const assert = require('solid-hammers/functions/assert');
+const invoke = require('solid-hammers/functions/invoke');
+const functions = require('solid-hammers/functions');
 
-// Pick methods for smaller bundles.
+// Pick methods.
 const Vector2 = require('solid-hammers/math/Vector2');
 const isTruthy = require('solid-hammers/functions/assert/isTruthy');
 ```
 
-## Classes
+## Usage TypeScript
+
+```typescript
+// Load entire lib
+import * as hammers from 'solid-hammers'
+import { Vector2, invokeAfter, isTruthyOr } from 'solid-hammers'
+
+// Load method categories
+import * as assert from 'solid-hammers/functions/assert'
+import * as invoke from 'solid-hammers/functions/invoke'
+
+// Pick methods.
+import Vector2 from 'solid-hammers/math/Vector2'
+import isTruthy from 'solid-hammers/functions/assert/isTruthy'
+import invokeUntil from 'solid-hammers/functions/invoke/invokeUntil'
+```
+
+## Math
 
 ### Vector2
 
@@ -39,11 +59,11 @@ A 2D vector class
 
 ## Functions
 
-### Assert methods
+### Assert
 
 ### `falsy`
 
-Evaluates if given value is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.
+> Evaluates if given value is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.
 
 For TypeScript this function can be used as a type guard that strips any truthy types from the evaluated value
 
@@ -99,15 +119,15 @@ if(falsy(val2)) {
 
 ```
 
-### `isFalsy`
+### **`isFalsy`**
 
-Same functionality as [solid-hammers falsy](#falsy) function, only difference is that the name adapts TypeScript naming convention for type guards.
+>For documentation see [solid-hammers falsy](#falsy).
 
-For documentation see [solid-hammers falsy](#falsy).
+Adapts TypeScript naming convention for type guards.
 
-### `falsyOr`
+### **`falsyOr`**
 
-Evaluates if given value is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value or returns default value.
+> Evaluates if given value is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value or returns default value.
 
 #### Syntax
 
@@ -117,13 +137,13 @@ falsyOr(defaultValue, value)
 
 #### Parameters
 
-##### `defaultValue` the value to be returned if evaluation is false
-
-##### `value` the value to be checked
+> ##### `defaultValue` the value to be returned if evaluation is false
+>
+> ##### `value` the value to be checked
 
 #### Return value
 
-##### `defaultValue` if evaluation is false; otherwise, `value`
+> ##### `defaultValue` if evaluation is false; otherwise, `value`
 
 #### Examples
 
@@ -143,9 +163,9 @@ falsyOr('defaultValue', {}) // 'defaultValue'
 falsyOr('defaultValue', () => {}) // 'defaultValue'
 ```
 
-### `truthy`
+### **`truthy`**
 
-Evaluates if given value is a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value.
+> Evaluates if given value is a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value.
 
 For TypeScript this function can be used as a type guard that strips any falsy types from the evaluated value.
 
@@ -157,11 +177,11 @@ truthy(value)
 
 #### Parameters
 
-##### `value` the value to be checked
+> ##### `value` the value to be checked
 
 #### Return value
 
-##### `true` if the value is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy); otherwise, `false`
+> ##### `true` if the value is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy); otherwise, `false`
 
 #### Examples
 
@@ -200,15 +220,15 @@ if(truthy(val2)) {
 }
 ```
 
-### `isTruthy`
+### **`isTruthy`**
 
-Same functionality as [solid-hammers truthy](#truthy) function, only difference is that the name adapts TypeScript naming convention for type guards.
+> For documentation see [solid-hammers truthy](#truthy).
 
-For documentation see [solid-hammers truthy](#truthy).
+Adapts TypeScript naming convention for type guards.
 
-### `truthyOr`
+### **`truthyOr`**
 
-Evaluates if given value is a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value or returns default value.
+> Evaluates if given value is a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) value or returns default value.
 
 #### Syntax
 
@@ -218,13 +238,13 @@ truthyOr(defaultValue, value)
 
 #### Parameters
 
-##### `defaultValue` the value to be returned if evaluation is false
-
-##### `value` the value to be checked
+> ##### `defaultValue` the value to be returned if evaluation is false
+>
+> ##### `value` the value to be checked
 
 #### Return value
 
-##### `defaultValue` if evaluation is false; otherwise, `value`
+> ##### `defaultValue` if evaluation is false; otherwise, `value`
 
 #### Examples
 
@@ -250,9 +270,9 @@ Promise.resolve({ data: () => 'data' }).then(assertFalsyOrReturnEmptyArray) // {
 
 ```
 
-### `nullish`
+### **`nullish`**
 
-Evaluates if given value is a [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) value.
+> Evaluates if given value is a [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) value.
 
 #### Syntax
 
@@ -262,11 +282,11 @@ nullish(value)
 
 #### Parameters
 
-##### `value` the value to be checked
+> ##### `value` the value to be checked
 
 #### Return value
 
-##### `true` if the value is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
+> ##### `true` if the value is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
 #### Examples
 
@@ -285,13 +305,13 @@ nullish('') // false
 nullish(0) // false
 ```
 
-### `isNullish`
+### **`isNullish`**
 
-Same functionality as [solid-hammers nullish](#nullish) function, only difference is that the name adapts TypeScript naming convention for type guards.
+> For documentation see [solid-hammers nullish](#nullish).
 
-For documentation see [solid-hammers nullish](#nullish).
+Adapts TypeScript naming convention for type guards.
 
-### `nullishOr`
+### **`nullishOr`**
 
 Evaluates if given value is a [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) value or returns default value.
 
@@ -303,13 +323,13 @@ nullishOr(defaultValue, value)
 
 #### Parameters
 
-##### `defaultValue` the value to be returned if evaluation is false
-
-##### `value` the value to be checked
+> ##### `defaultValue` the value to be returned if evaluation is false
+>
+> ##### `value` the value to be checked
 
 #### Return value
 
-##### `defaultValue` if evaluation is false; otherwise, `value`
+> ##### `defaultValue` if evaluation is false; otherwise, `value`
 
 #### Examples
 
@@ -328,9 +348,9 @@ nullishOr('defaultValue', '') // 'defaultValue'
 nullishOr('defaultValue', 0) // 'defaultValue'
 ```
 
-### `notNullish`
+### **`notNullish`**
 
-Evaluates if given value is not a [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) value.
+> Evaluates if given value is not a [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) value.
 
 #### Syntax
 
@@ -340,11 +360,11 @@ notNullish(value)
 
 #### Parameters
 
-##### `value` the value to be checked
+> ##### `value` the value to be checked
 
 #### Return value
 
-##### `true` if the value is not [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
+> ##### `true` if the value is not [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
 #### Examples
 
@@ -363,15 +383,15 @@ notNullish(null) // false
 notNullish(undefined) // false
 ```
 
-### `isNotNullish`
+### **`isNotNullish`**
 
-Same functionality as [solid-hammers notNullish](#notNullish) function, only difference is that the name adapts TypeScript naming convention for type guards.
+> For documentation see [solid-hammers notNullish](#notNullish).
 
-For documentation see [solid-hammers notNullish](#notNullish).
+Adapts TypeScript naming convention for type guards.
 
-### `notNullishOr`
+### **`notNullishOr`**
 
-Evaluates if given value is not a [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) value or returns default value.
+> Evaluates if given value is not a [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) value or returns default value.
 
 #### Syntax
 
@@ -381,13 +401,13 @@ notNullishOr(defaultValue, value)
 
 #### Parameters
 
-##### `defaultValue` the value to be returned if evaluation is false
-
-##### `value` the value to be checked
+> ##### `defaultValue` the value to be returned if evaluation is false
+>
+> ##### `value` the value to be checked
 
 #### Return value
 
-##### `defaultValue` if evaluation is false; otherwise, `value`
+> ##### `defaultValue` if evaluation is false; otherwise, `value`
 
 #### Examples
 
@@ -404,4 +424,171 @@ notNullishOr('defaultValue', 0) // 0
 
 notNullishOr('defaultValue', null) // 'defaultValue'
 notNullishOr('defaultValue', undefined) // 'defaultValue'
+```
+
+## Invoke
+
+### **`invokeAfter`**
+
+> Creates a function that invokes given fn **after** it have been called nth or more times.
+> The opposite of [`invokeUntil`](#invokeUntil).
+
+#### Syntax
+
+```typescript
+invokeAfter(nthTime, fn)
+```
+
+#### Parameters
+
+> ##### `nthTime` (real number) the nth time of calls before fn is invoked
+>
+> ##### `fn` the function to be invoked
+
+#### Return value
+
+> ##### new function with nth time call restriction
+
+#### Examples
+
+```typescript
+const log = invokeAfter(3, console.log)
+
+for (let i = 1; i <= 4; i++) {
+    console.log(i)
+    log('done on', i)
+}
+
+// 1
+
+// 2
+
+// 3
+// 'done on 3'
+
+// 4
+// 'done on 4'
+```
+
+### **`invokeUntil`**
+
+> Creates a function that invokes given fn **until** it have been called nth times.
+> The opposite of [`invokeAfter`](#invokeAfter).
+
+#### Syntax
+
+```typescript
+invokeUntil(nthTime, fn)
+```
+
+#### Parameters
+
+> ##### `nthTime` (real number) the nth time of calls before fn is invoked
+>
+> ##### `fn` the function to be invoked
+
+#### Return value
+
+> ##### new function with nth time call restriction
+
+#### Examples
+
+```typescript
+const log = invokeUntil(3, console.log)
+
+for (let i = 1; i <= 4; i++) {
+    console.log(i)
+    log('done on', i)
+}
+
+// 1
+// 'done on 1'
+
+// 2
+// 'done on 2'
+
+// 3
+// 'done on 3'
+
+// 4
+
+
+```
+
+### **`invokeOn`**
+
+> Creates a function that invokes given fn on and only on the nth call.
+
+#### Syntax
+
+```typescript
+invokeOn(nthTime, fn)
+```
+
+#### Parameters
+
+> ##### `nthTime` (real number) the nth time of calls before fn is invoked
+>
+> ##### `fn` the function to be invoked
+
+#### Return value
+
+> ##### new function with nth time call restriction
+
+#### Examples
+
+```typescript
+const log = invokeOn(3, console.log)
+
+for (let i = 1; i <=4; i++) {
+    console.log(i)
+    log('done on', i)
+}
+
+// 1
+
+// 2
+
+// 3
+// 'done on 3'
+
+// 4
+```
+
+### **`invokeOnce`**
+
+> Creates a function that invokes given fn only the first time when called.
+
+#### Syntax
+
+```typescript
+invokeOnce(fn)
+```
+
+#### Parameters
+
+> ##### `fn` the function to be invoked
+
+#### Return value
+
+> ##### new function with one time call restriction
+
+#### Examples
+
+```typescript
+const log = invokeOnce(console.log)
+
+for (let i = 1; i <=4; i++) {
+    console.log(i)
+    log('done on', i)
+}
+
+// 1
+// 'done on 1'
+
+// 2
+
+// 3
+
+// 4
 ```

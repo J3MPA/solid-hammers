@@ -16,8 +16,8 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".d.ts", ".ts", ".tsx"],
-        "moduleDirectory": ["node_modules", "lib"]
+        "extensions": [".d.ts", ".ts"],
+        "moduleDirectory": ["node_modules", "./"]
       }
     }
   }
