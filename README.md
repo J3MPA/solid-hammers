@@ -54,7 +54,7 @@ var isTruthy = require('solid-hammers/functions/assert/isTruthy');
 
 ### Typescript support
 
-> solid-hammers works with TypeScript out of the box as it ships with local types that will be read when you import solid-hammers in your code.
+> solid-hammers works with TypeScript out of the box since it contains built-in TypeScript declarations.
 
 ## Math
 
