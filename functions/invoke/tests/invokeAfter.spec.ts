@@ -1,4 +1,4 @@
-import invokeAfter from './invokeAfter'
+import invokeAfter from '../invokeAfter'
 describe('invokeAfter', () => {
   describe('Happy path', () => {
     it('should invoke fn after nth calls', () => {
