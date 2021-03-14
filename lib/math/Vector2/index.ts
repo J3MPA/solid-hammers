@@ -1,8 +1,8 @@
-import { isRealPoint, isRealNumber } from '../../utils'
+import { isRealNumber, isRealPoint } from '../utils'
 
 type RealNumber = number
 
-export class Vector2 {
+class Vector2 {
   x: RealNumber
   y: RealNumber
 
@@ -102,3 +102,5 @@ export class Vector2 {
     return vector instanceof Vector2
   }
 }
+
+export default Vector2

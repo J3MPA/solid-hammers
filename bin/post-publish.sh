@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-tsc --build --clean && rm -rf classes functions utils
+tsc --build --clean && rm -rf math functions utils

@@ -1,0 +1,7 @@
+{
+  "no-duplicate-header": {
+    "siblings_only": true
+  },
+  "commands-show-output": false,
+  "line-length": false
+}

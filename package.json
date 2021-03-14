@@ -16,6 +16,7 @@
     "lint": "eslint . --ext .ts",
     "build": "tsc",
     "test:unit": "jest",
+    "publish:dryrun": "npm publish --dry-run",
     "prepublishOnly": "./bin/pre-publish.sh",
     "postpublish": "./bin/post-publish.sh"
   },
