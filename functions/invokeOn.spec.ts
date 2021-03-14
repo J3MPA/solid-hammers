@@ -1,21 +1,25 @@
 import invokeOn from './invokeOn'
 describe('invokeOn', () => {
   describe('Happy path', () => {
-    it('should execute fn on nth time of execution', () => {
+    it('should invoke fn on and only on nth call', () => {
       const mockFn = jest.fn((s: string, n: number) => ({ s, n }))
       const fn = invokeOn(3, mockFn)
 
-      fn('first', 1)
-      expect(mockFn).toHaveBeenCalledTimes(0)
+      const res1 = fn('first', 1)
+      const res2 = fn('second', 2)
+      const res3 = fn('third', 3)
+      const res4 = fn('forth', 4)
 
-      fn('second', 2)
-      expect(mockFn).toHaveBeenCalledTimes(0)
-
-      fn('third', 3)
       expect(mockFn).toHaveBeenCalledTimes(1)
-      expect(mockFn).toHaveBeenCalledWith('third', 3)
+      expect(mockFn).toHaveBeenNthCalledWith(1, 'third', 3)
+
       expect(mockFn).toHaveReturnedTimes(1)
-      expect(mockFn).toHaveReturnedWith({ s: 'third', n: 3 })
+      expect(mockFn).toHaveNthReturnedWith(1, { s: 'third', n: 3 })
+
+      expect(res1).toBe(undefined)
+      expect(res2).toBe(undefined)
+      expect(res3).toEqual({ s: 'third', n: 3 })
+      expect(res4).toBe(undefined)
     })
   })
 

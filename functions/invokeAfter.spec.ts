@@ -1,24 +1,27 @@
 import invokeAfter from './invokeAfter'
 describe('invokeAfter', () => {
   describe('Happy path', () => {
-    it('should execute fn after nth time of execution', () => {
+    it('should invoke fn after nth calls', () => {
       const mockFn = jest.fn((s: string, n: number) => ({ s, n }))
       const fn = invokeAfter(3, mockFn)
 
-      fn('first', 1)
-      expect(mockFn).toHaveBeenCalledTimes(0)
+      const res1 = fn('first', 1)
+      const res2 = fn('second', 2)
+      const res3 = fn('third', 3)
+      const res4 = fn('forth', 4)
 
-      fn('second', 2)
-      expect(mockFn).toHaveBeenCalledTimes(0)
+      expect(mockFn).toHaveBeenCalledTimes(2)
+      expect(mockFn).toHaveBeenNthCalledWith(1, 'third', 3)
+      expect(mockFn).toHaveBeenNthCalledWith(2, 'forth', 4)
 
-      fn('third', 3)
-      expect(mockFn).toHaveBeenCalledTimes(0)
+      expect(mockFn).toHaveReturnedTimes(2)
+      expect(mockFn).toHaveNthReturnedWith(1, { s: 'third', n: 3 })
+      expect(mockFn).toHaveNthReturnedWith(2, { s: 'forth', n: 4 })
 
-      fn('forth', 4)
-      expect(mockFn).toHaveBeenCalledTimes(1)
-      expect(mockFn).toHaveBeenCalledWith('forth', 4)
-      expect(mockFn).toHaveReturnedTimes(1)
-      expect(mockFn).toHaveReturnedWith({ s: 'forth', n: 4 })
+      expect(res1).toBe(undefined)
+      expect(res2).toBe(undefined)
+      expect(res3).toEqual({ s: 'third', n: 3 })
+      expect(res4).toEqual({ s: 'forth', n: 4 })
     })
   })
 

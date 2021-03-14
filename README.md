@@ -412,8 +412,8 @@ notNullishOr('defaultValue', undefined) // 'defaultValue'
 
 ### `invokeAfter`
 
-Creates a function that invokes given fn after it have been called nth (or more times).
-Creates same behavior as [`invokeOn`](#invokeOn) if `invokedAfter` is called with `nthTime - 1`.
+Creates a function that invokes given fn after it have been called nth or more times.
+Is opposite to [`invokeUntil`](#invokeUntil).
 
 #### Syntax
 
@@ -438,7 +438,7 @@ const log = invokeAfter(3, console.log)
 
 for (let i = 1; i <= 4; i++) {
     console.log(i)
-    log('done')
+    log('done on', i)
 }
 
 // 1
@@ -446,15 +446,60 @@ for (let i = 1; i <= 4; i++) {
 // 2
 
 // 3
+// 'done on 3'
 
 // 4
-// 'done'
+// 'done on 4'
+```
+
+### `invokeUntil`
+
+Creates a function that invokes given fn until it have been called nth times.
+Is opposite to [`invokeAfter`](#invokeAfter).
+
+#### Syntax
+
+```typescript
+invokeUntil(nthTime, fn)
+```
+
+#### Parameters
+
+##### `nthTime` (real number) the nth time of calls before fn is invoked
+
+##### `fn` the function to be invoked
+
+#### Return value
+
+##### new function with nth time call restriction
+
+#### Examples
+
+```typescript
+const log = invokeUntil(3, console.log)
+
+for (let i = 1; i <= 4; i++) {
+    console.log(i)
+    log('done on', i)
+}
+
+// 1
+// 'done on 1'
+
+// 2
+// 'done on 2'
+
+// 3
+// 'done on 3'
+
+// 4
+
+
 ```
 
 ### `invokeOn`
 
-Creates a function that invokes given fn on the nth call (and after).
-Creates same behavior as [`invokeAfter`](#invokeAfter) if `invokeOn` is called with `nthTime + 1`.
+Creates a function that invokes given fn on and only on the nth call.
 
 #### Syntax
 
@@ -477,9 +522,9 @@ invokeOn(nthTime, fn)
 ```typescript
 const log = invokeOn(3, console.log)
 
-for (let i = 1; i <=3; i++) {
+for (let i = 1; i <=4; i++) {
     console.log(i)
-    log('done')
+    log('done on', i)
 }
 
 // 1
@@ -487,5 +532,7 @@ for (let i = 1; i <=3; i++) {
 // 2
 
 // 3
-// 'done'
+// 'done on 3'
+
+// 4
 ```
