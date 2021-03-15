@@ -1,8 +1,36 @@
-# solid-hammers 1.0.12
+# solid-hammers v1.0.13
 
 A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
 
 `This package i still under development and will ship with more functions and classes with time`
+
+## Table of content (TOC)
+
+1. [Installation](#installation)
+2. [Usage as a module](#usage)
+    1. [TypeScript support](#typescript-support)
+3. [Math](#math)
+    1. [Vector2](#vector2)
+4. [Functions](#functions)
+    1. [Assert](#assert)
+        1. [falsy](#falsy)
+        2. [isFalsy](#isFalsy)
+        3. [falsyOr](#falsyOr)
+        4. [truthy](#truthy)
+        5. [isTruthy](#isTruthy)
+        6. [truthyOr](#truthyOr)
+        7. [nullish](#nullish)
+        8. [isNullish](#isNullish)
+        9. [nullishOr](#nullishOr)
+        10. [notNullish](#notNullish)
+        11. [isNotNullish](#isNotNullish)
+        12. [notNullishOr](#notNullishOr)
+    2. [Invoke](#invoke)
+        1. [invokeAfter](#invokeAfter)
+        2. [invokeBefore](#invokeBefore)
+        3. [invokeUntil](#invokeUntil)
+        4. [invokeOn](#invokeOn)
+        5. [invokeOnce](#invokeOnce)
 
 ## Installation
 
@@ -18,7 +46,7 @@ Using yarn:
 $ yarn add solid-hammers
 ```
 
-## Usage as a module
+## Usage
 
 ```es6
 // ES6
@@ -58,7 +86,7 @@ var isTruthy = require('solid-hammers/functions/assert/isTruthy');
 
 ## Math
 
-### Vector2
+### **`Vector2`**
 
 > A 2D vector class
 
