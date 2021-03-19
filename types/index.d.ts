@@ -11,3 +11,4 @@ export type Truthy =
 export type Fn = (...args: any[]) => any
 export type F0<T> = () => T
 export type F1<P, T> = (param: P) => T
+export type Guard<P> = (param: P) => param is P
