@@ -132,6 +132,8 @@ average([20, 5, null]) // TypeError
 
 > see [average](#average)
 
+##### Available since: v1.2.0
+
 ### **`median`**
 
 > Sorts an array of given real number and return the median
