@@ -2,9 +2,9 @@ import getValue from './getValue'
 import { WeakObj } from '../../types'
 
 const getValueOr = <
+  DefVal,
   P extends readonly (string | number)[],
-  O extends WeakObj,
-  DefVal
+  O extends WeakObj
 >(
   defaultValue: DefVal,
   path: P,
