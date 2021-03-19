@@ -8,8 +8,8 @@ const throwTypeError = (val: any) => {
 
 const isNotARealNumber = (num: any) => isFalse(isRealNumber(num))
 
-const average = (nthNumbers: number[]) =>
-  nthNumbers.reduce((acc, number, i, arr) => {
+const average = (nNumbers: number[]) =>
+  nNumbers.reduce((acc, number, i, arr) => {
     ifThis(isNotARealNumber, throwTypeError, number)
 
     const nth = arr.length
