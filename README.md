@@ -1,4 +1,4 @@
-# solid-hammers v1.0.13
+# solid-hammers v1.1.0
 
 A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
 
