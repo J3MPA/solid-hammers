@@ -1,4 +1,6 @@
-const hasDepth = (object: unknown): object is Record<any, any> =>
+import { WeakObj } from '../../types'
+
+const hasDepth = (object: unknown): object is WeakObj =>
   typeof object === 'object' &&
   object !== null &&
   !Array.isArray(object) &&

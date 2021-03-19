@@ -3,5 +3,6 @@
     "siblings_only": true
   },
   "commands-show-output": false,
-  "line-length": false
+  "line-length": false,
+  "header-increment": false
 }

@@ -11,3 +11,17 @@ export type Truthy =
 export type Fn = (...args: any[]) => any
 export type F0<T> = () => T
 export type F1<P, T> = (param: P) => T
+export type Guard<P> = (param: unknown) => param is P
+export type WeakObj = Record<any, any>
+export type ExtractObjectProperty<O extends WeakObj, P> = P extends keyof O
+  ? O[P]
+  : never
+
+export type Path<P extends readonly any[], O extends WeakObj> = P extends [
+  infer P0,
+  ...infer PR
+]
+  ? ExtractObjectProperty<O, P0> extends WeakObj
+    ? Path<PR, ExtractObjectProperty<O, P0>>
+    : O[P0]
+  : O

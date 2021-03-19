@@ -42,19 +42,19 @@ exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is no
 
 exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 7`] = `"Scalar must be a real number"`;
 
-exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 1`] = `"Magnitute must be a real number"`;
+exports[`Vector2 static fromMagnitude Sad path should throw TypeError if magnitude is not a real number 1`] = `"Magnitude must be a real number"`;
 
-exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 2`] = `"Magnitute must be a real number"`;
+exports[`Vector2 static fromMagnitude Sad path should throw TypeError if magnitude is not a real number 2`] = `"Magnitude must be a real number"`;
 
-exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 3`] = `"Magnitute must be a real number"`;
+exports[`Vector2 static fromMagnitude Sad path should throw TypeError if magnitude is not a real number 3`] = `"Magnitude must be a real number"`;
 
-exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 4`] = `"Magnitute must be a real number"`;
+exports[`Vector2 static fromMagnitude Sad path should throw TypeError if magnitude is not a real number 4`] = `"Magnitude must be a real number"`;
 
-exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 5`] = `"Magnitute must be a real number"`;
+exports[`Vector2 static fromMagnitude Sad path should throw TypeError if magnitude is not a real number 5`] = `"Magnitude must be a real number"`;
 
-exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 6`] = `"Magnitute must be a real number"`;
+exports[`Vector2 static fromMagnitude Sad path should throw TypeError if magnitude is not a real number 6`] = `"Magnitude must be a real number"`;
 
-exports[`Vector2 static fromMagnitute Sad path should throw TypeError if magnitute is not a real number 7`] = `"Magnitute must be a real number"`;
+exports[`Vector2 static fromMagnitude Sad path should throw TypeError if magnitude is not a real number 7`] = `"Magnitude must be a real number"`;
 
 exports[`Vector2 static scale Sad path should throw TypeError if scalar is not a real number 1`] = `"Scalar must be a real number"`;
 

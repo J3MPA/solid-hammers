@@ -1,4 +1,4 @@
-# solid-hammers v1.0.13
+# solid-hammers v1.2.0
 
 A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
 
@@ -8,33 +8,36 @@ A set of JavaScript (ES6) functions and classes for all occasions. Ships with Ty
 
 1. [Installation](#installation)
 2. [Usage as a module](#usage)
-    1. [TypeScript support](#typescript-support)
+   1. [TypeScript support](#typescript-support)
 3. [Math](#math)
-    1. [Vector2](#vector2)
+   1. [Vector2](#vector2)
+   2. [average](#average)
+   3. [avg](#avg)
+   4. [median](#median)
 4. [Functions](#functions)
-    1. [Assert](#assert)
-        1. [falsy](#falsy)
-        2. [isFalsy](#isFalsy)
-        3. [falsyOr](#falsyOr)
-        4. [truthy](#truthy)
-        5. [isTruthy](#isTruthy)
-        6. [truthyOr](#truthyOr)
-        7. [nullish](#nullish)
-        8. [isNullish](#isNullish)
-        9. [nullishOr](#nullishOr)
-        10. [notNullish](#notNullish)
-        11. [isNotNullish](#isNotNullish)
-        12. [notNullishOr](#notNullishOr)
-    2. [Invoke](#invoke)
-        1. [invokeAfter](#invokeAfter)
-        2. [invokeBefore](#invokeBefore)
-        3. [invokeUntil](#invokeUntil)
-        4. [invokeOn](#invokeOn)
-        5. [invokeOnce](#invokeOnce)
-    3. [Object](#object)
-        1. [getValue](#getValue)
-        2. [getValueOr](#getValueOr)
-        3. [hasDepth](#hasDepth)
+   1. [Assert](#assert)
+      1. [falsy](#falsy)
+      2. [isFalsy](#isFalsy)
+      3. [falsyOr](#falsyOr)
+      4. [truthy](#truthy)
+      5. [isTruthy](#isTruthy)
+      6. [truthyOr](#truthyOr)
+      7. [nullish](#nullish)
+      8. [isNullish](#isNullish)
+      9. [nullishOr](#nullishOr)
+      10. [notNullish](#notNullish)
+      11. [isNotNullish](#isNotNullish)
+      12. [notNullishOr](#notNullishOr)
+   2. [Invoke](#invoke)
+      1. [invokeAfter](#invokeAfter)
+      2. [invokeBefore](#invokeBefore)
+      3. [invokeUntil](#invokeUntil)
+      4. [invokeOn](#invokeOn)
+      5. [invokeOnce](#invokeOnce)
+   3. [Object](#object)
+      1. [getValue](#getValue)
+      2. [getValueOr](#getValueOr)
+      3. [hasDepth](#hasDepth)
 
 ## Installation
 
@@ -57,7 +60,7 @@ $ yarn add solid-hammers
 
 import * as hammers from 'solid-hammers'
 // or
-import { /* functions */ } from 'solid-hammers'
+import /* functions */ 'solid-hammers'
 
 // Pick method categories
 import * as assert from 'solid-hammers/functions/assert'
@@ -72,16 +75,16 @@ import invokeUntil from 'solid-hammers/functions/invoke/invokeUntil'
 ```js
 // ES5
 
-var hammers = require('solid-hammers');
+var hammers = require('solid-hammers')
 
 // Pick method categories
-var assert = require('solid-hammers/functions/assert');
-var invoke = require('solid-hammers/functions/invoke');
-var functions = require('solid-hammers/functions');
+var assert = require('solid-hammers/functions/assert')
+var invoke = require('solid-hammers/functions/invoke')
+var functions = require('solid-hammers/functions')
 
 // Pick methods.
-var Vector2 = require('solid-hammers/math/Vector2');
-var isTruthy = require('solid-hammers/functions/assert/isTruthy');
+var Vector2 = require('solid-hammers/math/Vector2')
+var isTruthy = require('solid-hammers/functions/assert/isTruthy')
 ```
 
 ### Typescript support
@@ -94,12 +97,81 @@ var isTruthy = require('solid-hammers/functions/assert/isTruthy');
 
 > A 2D vector class
 
+### **`average`**
+
+> Returns the average number of a given array of numbers
+
+#### Syntax
+
+```es6
+average(numbers)
+```
+
+#### Parameters
+
+> ##### `numbers` array of real numbers
+
+#### Return value
+
+> ##### returns the average of `numbers` (`number`)
+
+##### Available since: v1.2.0
+
+#### Examples
+
+```es6
+average([20, 5, 5]) // 10
+
+average([20, 5, NaN]) // TypeError
+average([20, 5, Infinity]) // TypeError
+average([20, 5, undefined]) // TypeError
+average([20, 5, null]) // TypeError
+```
+
+### **`avg`**
+
+> see [average](#average)
+
+##### Available since: v1.2.0
+
+### **`median`**
+
+> Sorts an array of given real number and return the median
+
+#### Syntax
+
+```es6
+median(numbers)
+```
+
+#### Parameters
+
+> ##### `numbers` array of real numbers
+
+#### Return value
+
+> ##### returns the median of `numbers` (`number`)
+
+##### Available since: v1.2.0
+
+#### Examples
+
+```es6
+median([20, 5, 5]) // 5
+median([20, 10, 20]) // 20
+median([20, 10, 10, 20]) // 15
+
+median([20, 5, NaN]) // TypeError
+median([20, 5, Infinity]) // TypeError
+median([20, 5, undefined]) // TypeError
+median([20, 5, null]) // TypeError
+```
+
 ## Functions
 
 ### Assert
 
 ### **`falsy`**
-
 
 > Evaluates if given value is a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value.
 
@@ -119,7 +191,7 @@ falsy(value)
 
 > ##### `true` if `value` is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy); otherwise, `false`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -161,7 +233,7 @@ if(falsy(val2)) {
 
 ### **`isFalsy`**
 
->For documentation see [solid-hammers falsy](#falsy).
+> For documentation see [solid-hammers falsy](#falsy).
 
 Adapts TypeScript naming convention for type guards.
 
@@ -185,7 +257,7 @@ falsyOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -195,7 +267,6 @@ falsyOr('defaultValue', '') // ''
 falsyOr('defaultValue', 0) // 0
 falsyOr('defaultValue', null) // null
 falsyOr('defaultValue', undefined) // undefined
-
 
 falsyOr('defaultValue', 123) // 'defaultValue'
 falsyOr('defaultValue', true) // 'defaultValue'
@@ -225,7 +296,7 @@ truthy(value)
 
 > ##### `true` if `value` is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy); otherwise, `false`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -254,7 +325,7 @@ type SomeType = number | boolean | null
 const val1: SomeType | SomeInterface
 
 if(truthy(val1)) {
-    val1 // val1: SomeInterface | number | true 
+    val1 // val1: SomeInterface | number | true
 }
 
 const val2: null | undefined | false
@@ -290,7 +361,7 @@ truthyOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -313,7 +384,6 @@ const assertTruthyOrReturnEmptyArray = truthyOr.bind(null, [])
 
 Promise.resolve(null).then(assertTruthyOrReturnEmptyArray) // []
 Promise.resolve({ data: () => 'data' }).then(assertTruthyOrReturnEmptyArray) // { data: () => 'data' }
-
 ```
 
 ### **`nullish`**
@@ -334,7 +404,7 @@ nullish(value)
 
 > ##### `true` if `value` is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -379,7 +449,7 @@ nullishOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -416,7 +486,7 @@ notNullish(value)
 
 > ##### `true` if `value` is not [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -461,7 +531,7 @@ notNullishOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -503,7 +573,7 @@ invokeAfter(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -511,8 +581,8 @@ invokeAfter(nthTime, fn)
 const log = invokeAfter(3, console.log)
 
 for (let i = 1; i <= 4; i++) {
-    console.log(i)
-    log('done on', i)
+  console.log(i)
+  log('done on', i)
 }
 
 // 1
@@ -547,7 +617,7 @@ invokeUntil(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -555,8 +625,8 @@ invokeUntil(nthTime, fn)
 const log = invokeUntil(3, console.log)
 
 for (let i = 1; i <= 4; i++) {
-    console.log(i)
-    log('done on', i)
+  console.log(i)
+  log('done on', i)
 }
 
 // 1
@@ -569,8 +639,6 @@ for (let i = 1; i <= 4; i++) {
 // 'done on 3'
 
 // 4
-
-
 ```
 
 ### **`invokeOn`**
@@ -593,16 +661,16 @@ invokeOn(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
 ```es6
 const log = invokeOn(3, console.log)
 
-for (let i = 1; i <=4; i++) {
-    console.log(i)
-    log('done on', i)
+for (let i = 1; i <= 4; i++) {
+  console.log(i)
+  log('done on', i)
 }
 
 // 1
@@ -633,16 +701,16 @@ invokeOnce(fn)
 
 > ##### new function with one time call restriction
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
 ```es6
 const log = invokeOnce(console.log)
 
-for (let i = 1; i <=4; i++) {
-    console.log(i)
-    log('done on', i)
+for (let i = 1; i <= 4; i++) {
+  console.log(i)
+  log('done on', i)
 }
 
 // 1
@@ -661,7 +729,7 @@ for (let i = 1; i <=4; i++) {
 
 > Safe property accessor. Functional style for optional chaining.
 
-Generic TypeScript method
+For TypeScript this method will infer correct return type as long as given path is a readonly array
 
 #### Syntax
 
@@ -679,7 +747,7 @@ getValue(path, object)
 
 > ##### the value found at the end of the path; otherwise `undefined`
 
-##### Available since: 1.0.13
+##### Available since: v1.2.0
 
 #### Examples
 
@@ -691,7 +759,10 @@ getValue(['some', 'data'], { some: true }) // undefined
 getValue(['some'], { some: { data: true } }) // { data: true }
 
 // TypeScript
-getValue<true>(['some','data'], { some: { data: true } }) // type: true | undefined
+getValue(['some', 'data'] as const, { some: { data: true } }) // type: true | undefined
+getValue(['some'] as const, { some: { data: true } }) // type: { data: true }  | undefined
+getValue(['a'] as const, { some: { data: true } }) // type: undefined
+getValue(['a'] as const, {}) // type: undefined
 ```
 
 ### **`getValueOr`**
@@ -718,19 +789,22 @@ getValueOr(defaultValue, path, object)
 
 > ##### the value found at the end of the path; otherwise `defaultValue`
 
-##### Available since: 1.0.13
+##### Available since: v1.2.0
 
 #### Examples
 
 ```es6
-getValueOr('defaultValue', ['some','data'], { some: { data: true } }) // true
-getValueOr('defaultValue', ['some','data'], { some: { data: null } }) // null
+getValueOr('defaultValue', ['some', 'data'], { some: { data: true } }) // true
+getValueOr('defaultValue', ['some', 'data'], { some: { data: null } }) // null
 getValueOr('defaultValue', ['some'], { some: { data: true } }) // { data: true }
-getValueOr('defaultValue', ['some','data'], { some: { data: undefined } }) // 'defaultValue'
-getValueOr('defaultValue', ['some','data'], { some: true }) // 'defaultValue'
+getValueOr('defaultValue', ['some', 'data'], { some: { data: undefined } }) // 'defaultValue'
+getValueOr('defaultValue', ['some', 'data'], { some: true }) // 'defaultValue'
 
 // TypeScript
-getValueOr<true>('defaultValue', ['some','data'], { some: { data: true } }) // type: true | 'defaultValue'
+getValueOr('defaultValue', ['some', 'data'] as const, { some: { data: true } }) // type: true | 'defaultValue'
+getValueOr('defaultValue', ['some'] as const, { some: { data: true } }) // type: { data: true }  | 'defaultValue'
+getValueOr('defaultValue', ['a'] as const, { some: { data: true } }) // type: 'defaultValue'
+getValueOr('defaultValue', ['a'] as const, {}) // type: 'defaultValue'
 ```
 
 ### **`hasDepth`**
@@ -753,7 +827,7 @@ hasDepth(object)
 
 > ##### true of `object` has any properties; otherwise false
 
-##### Available since: 1.0.13
+##### Available since: v1.2.0
 
 #### Examples
 
@@ -762,6 +836,6 @@ hasDepth({ some: { data: true } }) // true
 hasDepth({}) // false
 hasDepth(null) // false
 hasDepth([]) // false
-hasDepth([1,2,3,4]) // false
-hasDepth([[1],[2]]) // false
+hasDepth([1, 2, 3, 4]) // false
+hasDepth([[1], [2]]) // false
 ```

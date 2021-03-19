@@ -1,11 +1,16 @@
 import getValue from './getValue'
+import { WeakObj } from '../../types'
 
-const getValueOr = <DefVal, T = any>(
+const getValueOr = <
+  DefVal,
+  P extends readonly (string | number)[],
+  O extends WeakObj
+>(
   defaultValue: DefVal,
-  path: (string | number)[],
-  object: Record<string | number, any> | undefined
+  path: P,
+  object: O
 ) => {
-  const maybeValue = getValue<T>(path, object)
+  const maybeValue = getValue<P, O>(path, object)
   if (maybeValue === undefined) return defaultValue
   return maybeValue
 }

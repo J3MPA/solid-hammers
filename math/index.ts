@@ -1,2 +1,7 @@
 export { default as Vector2 } from './Vector2'
+export { default as average } from './average'
+export { default as avg } from './avg'
+export { default as isOdd } from './isOdd'
+export { default as isEven } from './isEven'
+export { default as median } from './median'
 export * from './utils'

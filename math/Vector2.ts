@@ -1,4 +1,4 @@
-import { isRealNumber, isRealPoint } from '../utils'
+import { isRealNumber, isRealPoint } from './utils'
 
 type RealNumber = number
 
@@ -90,11 +90,11 @@ class Vector2 {
     return new Vector2(1, 0)
   }
 
-  static fromMagnitute(magnitute: RealNumber) {
-    if (!isRealNumber(magnitute))
-      throw new TypeError('Magnitute must be a real number')
+  static fromMagnitude(magnitude: RealNumber) {
+    if (!isRealNumber(magnitude))
+      throw new TypeError('Magnitude must be a real number')
 
-    const normal = Math.sqrt(magnitute ** 2 / 2)
+    const normal = Math.sqrt(magnitude ** 2 / 2)
     return new Vector2(normal, normal)
   }
 
