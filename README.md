@@ -11,6 +11,9 @@ A set of JavaScript (ES6) functions and classes for all occasions. Ships with Ty
    1. [TypeScript support](#typescript-support)
 3. [Math](#math)
    1. [Vector2](#vector2)
+   2. [average](#average)
+   3. [avg](#avg)
+   4. [median](#median)
 4. [Functions](#functions)
    1. [Assert](#assert)
       1. [falsy](#falsy)
@@ -93,6 +96,74 @@ var isTruthy = require('solid-hammers/functions/assert/isTruthy')
 ### **`Vector2`**
 
 > A 2D vector class
+
+### **`average`**
+
+> Returns the average number of a given array of numbers
+
+#### Syntax
+
+```es6
+average(numbers)
+```
+
+#### Parameters
+
+> ##### `numbers` array of real numbers
+
+#### Return value
+
+> ##### returns the average of `numbers` (`number`)
+
+##### Available since: v1.2.0
+
+#### Examples
+
+```es6
+average([20, 5, 5]) // 10
+
+average([20, 5, NaN]) // TypeError
+average([20, 5, Infinity]) // TypeError
+average([20, 5, undefined]) // TypeError
+average([20, 5, null]) // TypeError
+```
+
+### **`avg`**
+
+> see [average](#average)
+
+### **`median`**
+
+> Sorts an array of given real number and return the median
+
+#### Syntax
+
+```es6
+median(numbers)
+```
+
+#### Parameters
+
+> ##### `numbers` array of real numbers
+
+#### Return value
+
+> ##### returns the median of `numbers` (`number`)
+
+##### Available since: v1.2.0
+
+#### Examples
+
+```es6
+median([20, 5, 5]) // 5
+median([20, 10, 20]) // 20
+median([20, 10, 10, 20]) // 15
+
+median([20, 5, NaN]) // TypeError
+median([20, 5, Infinity]) // TypeError
+median([20, 5, undefined]) // TypeError
+median([20, 5, null]) // TypeError
+```
 
 ## Functions
 
