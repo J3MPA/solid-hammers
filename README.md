@@ -118,7 +118,7 @@ falsy(value)
 
 > ##### `true` if `value` is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy); otherwise, `false`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -184,7 +184,7 @@ falsyOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -223,7 +223,7 @@ truthy(value)
 
 > ##### `true` if `value` is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy); otherwise, `false`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -288,7 +288,7 @@ truthyOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -331,7 +331,7 @@ nullish(value)
 
 > ##### `true` if `value` is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -376,7 +376,7 @@ nullishOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -413,7 +413,7 @@ notNullish(value)
 
 > ##### `true` if `value` is not [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -458,7 +458,7 @@ notNullishOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -500,7 +500,7 @@ invokeAfter(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -544,7 +544,7 @@ invokeUntil(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -588,7 +588,7 @@ invokeOn(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -628,7 +628,7 @@ invokeOnce(fn)
 
 > ##### new function with one time call restriction
 
-##### Available since: 1.0.5
+##### Available since: v1.0.5
 
 #### Examples
 
@@ -674,7 +674,7 @@ getValue(path, object)
 
 > ##### the value found at the end of the path; otherwise `undefined`
 
-##### Available since: 1.0.13
+##### Available since: v1.2.0
 
 #### Examples
 
@@ -716,7 +716,7 @@ getValueOr(defaultValue, path, object)
 
 > ##### the value found at the end of the path; otherwise `defaultValue`
 
-##### Available since: 1.0.13
+##### Available since: v1.2.0
 
 #### Examples
 
@@ -728,7 +728,10 @@ getValueOr('defaultValue', ['some', 'data'], { some: { data: undefined } }) // '
 getValueOr('defaultValue', ['some', 'data'], { some: true }) // 'defaultValue'
 
 // TypeScript
-getValueOr < true > ('defaultValue', ['some', 'data'], { some: { data: true } }) // type: true | 'defaultValue'
+getValueOr('defaultValue', ['some', 'data'] as const, { some: { data: true } }) // type: true | 'defaultValue'
+getValueOr('defaultValue', ['some'] as const, { some: { data: true } }) // type: { data: true }  | 'defaultValue'
+getValueOr('defaultValue', ['a'] as const, { some: { data: true } }) // type: 'defaultValue'
+getValueOr('defaultValue', ['a'] as const, {}) // type: 'defaultValue'
 ```
 
 ### **`hasDepth`**
@@ -751,7 +754,7 @@ hasDepth(object)
 
 > ##### true of `object` has any properties; otherwise false
 
-##### Available since: 1.0.13
+##### Available since: v1.2.0
 
 #### Examples
 
