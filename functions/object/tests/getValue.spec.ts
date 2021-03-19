@@ -6,6 +6,9 @@ describe('getValue', () => {
       expect(getValue(['some'], { some: 'string' })).toBe('string')
       expect(getValue(['some'], { some: null })).toBe(null)
       expect(getValue(['some', 0], { some: ['something'] })).toBe('something')
+      expect(getValue(['a', 0, 'b'], { a: [{ b: 'something' }] })).toBe(
+        'something'
+      )
       expect(
         getValue(['some', 'thing', 'that', 'is', 'cool'], { some: 123 })
       ).toBe(undefined)
@@ -23,6 +26,10 @@ describe('getValue', () => {
           some: { what: 123 },
         })
       ).toBe(undefined)
+
+      expect(getValue(['a', 1, 'b'], { a: [{ b: 'something' }] })).toBe(
+        undefined
+      )
     })
   })
 })
