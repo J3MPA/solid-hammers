@@ -1,11 +1,11 @@
-const getProperty = <T = any>(
-  pathToProp: (string | number)[],
+const getValue = <T = any>(
+  path: (string | number)[],
   object: Record<string | number, any> | undefined
 ): T | undefined => {
   let value = object
-  for (const path of pathToProp) {
+  for (const key of path) {
     if (value !== undefined) {
-      value = value?.[path]
+      value = value?.[key]
       continue
     }
     break
@@ -13,4 +13,4 @@ const getProperty = <T = any>(
   return value as T | undefined
 }
 
-export default getProperty
+export default getValue

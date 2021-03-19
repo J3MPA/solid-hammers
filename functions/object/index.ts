@@ -1,2 +1,3 @@
 export { default as hasDepth } from './hasDepth'
-export { default as getProperty } from './getProperty'
+export { default as getValue } from './getValue'
+export { default as getValueOr } from './getValueOr'

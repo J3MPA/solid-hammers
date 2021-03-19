@@ -31,6 +31,10 @@ A set of JavaScript (ES6) functions and classes for all occasions. Ships with Ty
         3. [invokeUntil](#invokeUntil)
         4. [invokeOn](#invokeOn)
         5. [invokeOnce](#invokeOnce)
+    3. [Object](#object)
+        1. [getValue](#getValue)
+        2. [getValueOr](#getValueOr)
+        3. [hasDepth](#hasDepth)
 
 ## Installation
 
@@ -305,10 +309,10 @@ truthyOr('defaultValue', null) // 'defaultValue'
 truthyOr('defaultValue', undefined) // 'defaultValue'
 
 // Create a default method
-const assertFalsyOrReturnEmptyArray = truthyOr.bind(null, [])
+const assertTruthyOrReturnEmptyArray = truthyOr.bind(null, [])
 
-Promise.resolve(null).then(assertFalsyOrReturnEmptyArray) // []
-Promise.resolve({ data: () => 'data' }).then(assertFalsyOrReturnEmptyArray) // { data: () => 'data' }
+Promise.resolve(null).then(assertTruthyOrReturnEmptyArray) // []
+Promise.resolve({ data: () => 'data' }).then(assertTruthyOrReturnEmptyArray) // { data: () => 'data' }
 
 ```
 
@@ -649,4 +653,115 @@ for (let i = 1; i <=4; i++) {
 // 3
 
 // 4
+```
+
+### Object
+
+### **`getValue`**
+
+> Safe property accessor. Functional style for optional chaining.
+
+Generic TypeScript method
+
+#### Syntax
+
+```es6
+getValue(path, object)
+```
+
+#### Parameters
+
+> ##### `path` ((string | number)[]) the path to the property that needs accessed
+>
+> ##### `object` the object
+
+#### Return value
+
+> ##### the value found at the end of the path; otherwise `undefined`
+
+##### Available since: 1.0.13
+
+#### Examples
+
+```es6
+getValue(['some', 'data'], { some: { data: true } }) // true
+getValue(['some', 0, 'data'], { some: [{ data: true }] }) // true
+getValue(['some', 1, 'data'], { some: [{ data: true }, { data: false }] }) // false
+getValue(['some', 'data'], { some: true }) // undefined
+getValue(['some'], { some: { data: true } }) // { data: true }
+
+// TypeScript
+getValue<true>(['some','data'], { some: { data: true } }) // type: true | undefined
+```
+
+### **`getValueOr`**
+
+> Safe property accessor with default value. Functional style for optional chaining and with default value capabilities
+
+Generic TypeScript method
+
+#### Syntax
+
+```es6
+getValueOr(defaultValue, path, object)
+```
+
+#### Parameters
+
+> ##### `defaultValue` the default return value
+>
+> ##### `path` ((string | number)[]) the path to the property that needs accessed
+>
+> ##### `object` the object
+
+#### Return value
+
+> ##### the value found at the end of the path; otherwise `defaultValue`
+
+##### Available since: 1.0.13
+
+#### Examples
+
+```es6
+getValueOr('defaultValue', ['some','data'], { some: { data: true } }) // true
+getValueOr('defaultValue', ['some','data'], { some: { data: null } }) // null
+getValueOr('defaultValue', ['some'], { some: { data: true } }) // { data: true }
+getValueOr('defaultValue', ['some','data'], { some: { data: undefined } }) // 'defaultValue'
+getValueOr('defaultValue', ['some','data'], { some: true }) // 'defaultValue'
+
+// TypeScript
+getValueOr<true>('defaultValue', ['some','data'], { some: { data: true } }) // type: true | 'defaultValue'
+```
+
+### **`hasDepth`**
+
+> Checks if object has any properties
+
+Generic TypeScript method
+
+#### Syntax
+
+```es6
+hasDepth(object)
+```
+
+#### Parameters
+
+> ##### `object` the object
+
+#### Return value
+
+> ##### true of `object` has any properties; otherwise false
+
+##### Available since: 1.0.13
+
+#### Examples
+
+```es6
+hasDepth({ some: { data: true } }) // true
+hasDepth({}) // false
+hasDepth(null) // false
+hasDepth([]) // false
+hasDepth([1,2,3,4]) // false
+hasDepth([[1],[2]]) // false
 ```
