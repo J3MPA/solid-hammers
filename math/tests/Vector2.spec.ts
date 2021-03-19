@@ -1,4 +1,4 @@
-import Vector2 from '.'
+import Vector2 from '../Vector2'
 
 describe('Vector2', () => {
   describe('constructor', () => {
@@ -197,57 +197,57 @@ describe('Vector2', () => {
     })
   })
 
-  describe('static fromMagnitute', () => {
+  describe('static fromMagnitude', () => {
     describe('Happy path', () => {
-      it('should return a new Vector2 instance with a normalized point from given magnitute (x === y)', () => {
-        const magnitute = 50
-        const v1 = Vector2.fromMagnitute(50)
+      it('should return a new Vector2 instance with a normalized point from given magnitude (x === y)', () => {
+        const magnitude = 50
+        const v1 = Vector2.fromMagnitude(50)
         expect(v1).toBeInstanceOf(Vector2)
         expect(v1.x).toBe(v1.y)
-        expect(v1.x).toBe(Math.sqrt(magnitute ** 2 / 2))
-        expect(v1.y).toBe(Math.sqrt(magnitute ** 2 / 2))
+        expect(v1.x).toBe(Math.sqrt(magnitude ** 2 / 2))
+        expect(v1.y).toBe(Math.sqrt(magnitude ** 2 / 2))
       })
     })
 
     describe('Sad path', () => {
-      it('should throw TypeError if magnitute is not a real number', () => {
-        expect(() => Vector2.fromMagnitute(NaN)).toThrowError(TypeError)
-        expect(() => Vector2.fromMagnitute(NaN)).toThrowErrorMatchingSnapshot()
+      it('should throw TypeError if magnitude is not a real number', () => {
+        expect(() => Vector2.fromMagnitude(NaN)).toThrowError(TypeError)
+        expect(() => Vector2.fromMagnitude(NaN)).toThrowErrorMatchingSnapshot()
 
-        expect(() => Vector2.fromMagnitute(Infinity)).toThrowError(TypeError)
+        expect(() => Vector2.fromMagnitude(Infinity)).toThrowError(TypeError)
         expect(() =>
-          Vector2.fromMagnitute(Infinity)
+          Vector2.fromMagnitude(Infinity)
         ).toThrowErrorMatchingSnapshot()
 
-        expect(() => Vector2.fromMagnitute('something' as any)).toThrowError(
+        expect(() => Vector2.fromMagnitude('something' as any)).toThrowError(
           TypeError
         )
         expect(() =>
-          Vector2.fromMagnitute('something' as any)
+          Vector2.fromMagnitude('something' as any)
         ).toThrowErrorMatchingSnapshot()
 
-        expect(() => Vector2.fromMagnitute(false as any)).toThrowError(
+        expect(() => Vector2.fromMagnitude(false as any)).toThrowError(
           TypeError
         )
         expect(() =>
-          Vector2.fromMagnitute(false as any)
+          Vector2.fromMagnitude(false as any)
         ).toThrowErrorMatchingSnapshot()
 
-        expect(() => Vector2.fromMagnitute(true as any)).toThrowError(TypeError)
+        expect(() => Vector2.fromMagnitude(true as any)).toThrowError(TypeError)
         expect(() =>
-          Vector2.fromMagnitute(true as any)
+          Vector2.fromMagnitude(true as any)
         ).toThrowErrorMatchingSnapshot()
 
-        expect(() => Vector2.fromMagnitute(undefined as any)).toThrowError(
+        expect(() => Vector2.fromMagnitude(undefined as any)).toThrowError(
           TypeError
         )
         expect(() =>
-          Vector2.fromMagnitute(undefined as any)
+          Vector2.fromMagnitude(undefined as any)
         ).toThrowErrorMatchingSnapshot()
 
-        expect(() => Vector2.fromMagnitute(null as any)).toThrowError(TypeError)
+        expect(() => Vector2.fromMagnitude(null as any)).toThrowError(TypeError)
         expect(() =>
-          Vector2.fromMagnitute(null as any)
+          Vector2.fromMagnitude(null as any)
         ).toThrowErrorMatchingSnapshot()
       })
     })
