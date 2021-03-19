@@ -10,11 +10,6 @@ describe('getValueOr', () => {
       expect(
         getValueOr('defaultValue', ['some', 0], { some: ['something'] })
       ).toBe('something')
-      expect(
-        getValueOr('defaultValue', ['some', 'thing', 'that', 'is', 'cool'], {
-          some: 123,
-        })
-      ).toBe(undefined)
     })
   })
 
