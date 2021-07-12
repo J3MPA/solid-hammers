@@ -1,4 +1,4 @@
-import { isRealNumber, isRealPoint } from './utils'
+import { isRealNumber, isRealPoint } from '../functions/assert'
 
 type RealNumber = number
 
