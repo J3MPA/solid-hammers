@@ -1,4 +1,6 @@
-export type Nullish = undefined | null
+export type Nullable<T> = T | null
+export type Nullish = Nullable<undefined>
+export type AnyFn = (...args: any[]) => any
 export type Falsy = Nullish | false | '' | 0 | -0 | 0n | -0n
 export type Truthy =
   | string
@@ -6,9 +8,8 @@ export type Truthy =
   | Record<any, any>
   | true
   | number
-  | ((...args: any[]) => any)
+  | AnyFn
 
-export type AnyFn = (...args: any[]) => any
 export type Fn<A, R> = (...args: A[]) => R
 export type F0<R> = () => R
 export type F1<A, R> = (arg: A) => R
