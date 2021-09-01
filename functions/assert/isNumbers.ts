@@ -1,9 +1,9 @@
 import isTruthy from './isTruthy'
 import isNumber from './isNumber'
 
-const isNumbers = (maybeNumber: any[]): maybeNumber is number[] =>
-  Array.isArray(maybeNumber) &&
-  isTruthy(maybeNumber.length) &&
-  maybeNumber.every(isNumber)
+const isNumbers = (maybeNumbers: unknown): maybeNumbers is number[] =>
+  Array.isArray(maybeNumbers) &&
+  isTruthy(maybeNumbers.length) &&
+  maybeNumbers.every(isNumber)
 
 export default isNumbers

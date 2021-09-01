@@ -1,2 +1,2 @@
-import isNotStrictEqual from './equal'
+import isNotStrictEqual from './notEqual'
 export default isNotStrictEqual

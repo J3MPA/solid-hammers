@@ -10,7 +10,6 @@ describe('Vector2', () => {
         expect(v.y).toBe(37)
       })
     })
-
     describe('Sad path', () => {
       it('should throw TypeError if Vector2 is instantiated with x as a non real number', () => {
         expect(() => new Vector2('some' as any, 2)).toThrow(TypeError)
@@ -34,7 +33,6 @@ describe('Vector2', () => {
           () => new Vector2(undefined as any, 2)
         ).toThrowErrorMatchingSnapshot()
       })
-
       it('should throw TypeError if Vector2 is instantiated with y as a non real number', () => {
         expect(() => new Vector2(2, 'some' as any)).toThrow(TypeError)
         expect(

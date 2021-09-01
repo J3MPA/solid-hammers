@@ -28,6 +28,38 @@ exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is insta
 
 exports[`Vector2 constructor Sad path should throw TypeError if Vector2 is instantiated with y as a non real number 7`] = `"Point must be a real number"`;
 
+exports[`Vector2 constructor asasd 1`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 2`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 3`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 4`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 5`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 6`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 7`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 8`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 9`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 10`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 11`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 12`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 13`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 14`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 15`] = `"Point must be a real number"`;
+
+exports[`Vector2 constructor asasd 16`] = `"Point must be a real number"`;
+
 exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 1`] = `"Scalar must be a real number"`;
 
 exports[`Vector2 prototype.scale Sad path should throw TypeError if scalar is not a real number 2`] = `"Scalar must be a real number"`;

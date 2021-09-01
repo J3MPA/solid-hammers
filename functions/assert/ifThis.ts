@@ -1,12 +1,12 @@
-import { F1 } from '../../types'
 import isFn from './isFn'
+import type { Fn } from '../../types'
 
 const ifThis = <T, R>(
-  ifThis: F1<T, boolean> | boolean,
-  then: F1<T, R>,
-  value: T
+  value: T,
+  asserts: Fn<T, boolean> | boolean,
+  then: Fn<T, R>
 ) => {
-  const thisDidHappen = isFn(ifThis) ? ifThis(value) : ifThis
+  const thisDidHappen = isFn(asserts) ? asserts(value) : asserts
   if (thisDidHappen) return then(value)
 }
 
