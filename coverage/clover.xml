@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1638123175456" clover="3.2.0">
+  <project timestamp="1638123175457" name="All files">
+    <metrics statements="342" coveredstatements="338" conditionals="85" coveredconditionals="68" methods="104" coveredmethods="67" elements="531" coveredelements="473" complexity="0" loc="342" ncloc="342" packages="5" files="46" classes="46"/>
+    <package name="functions">
+      <metrics statements="11" coveredstatements="9" conditionals="16" coveredconditionals="11" methods="4" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/index.ts">
+        <metrics statements="11" coveredstatements="9" conditionals="16" coveredconditionals="11" methods="4" coveredmethods="3"/>
+        <line num="2" count="1" type="cond" truecount="4" falsecount="1"/>
+        <line num="3" count="37" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="37" type="stmt"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="10" count="37" type="cond" truecount="3" falsecount="1"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="functions.assert">
+      <metrics statements="171" coveredstatements="171" conditionals="27" coveredconditionals="18" methods="52" coveredmethods="23"/>
+      <file name="equal.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/equal.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="falsy.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/falsy.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+      </file>
+      <file name="falsyOr.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/falsyOr.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="11" type="stmt"/>
+      </file>
+      <file name="ifThis.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/ifThis.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="5" count="69" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="69" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="9" count="11" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/index.ts">
+        <metrics statements="62" coveredstatements="62" conditionals="0" coveredconditionals="0" methods="30" coveredmethods="7"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="7" count="10" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="10" type="stmt"/>
+        <line num="19" count="10" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="24" count="10" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
+        <line num="26" count="10" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="29" count="10" type="stmt"/>
+        <line num="30" count="10" type="stmt"/>
+        <line num="31" count="20" type="stmt"/>
+        <line num="32" count="10" type="stmt"/>
+        <line num="33" count="10" type="stmt"/>
+        <line num="34" count="10" type="stmt"/>
+        <line num="35" count="73" type="stmt"/>
+        <line num="36" count="10" type="stmt"/>
+        <line num="37" count="64" type="stmt"/>
+        <line num="38" count="10" type="stmt"/>
+        <line num="39" count="64" type="stmt"/>
+        <line num="40" count="10" type="stmt"/>
+        <line num="41" count="10" type="stmt"/>
+        <line num="42" count="10" type="stmt"/>
+        <line num="43" count="10" type="stmt"/>
+        <line num="44" count="10" type="stmt"/>
+        <line num="45" count="10" type="stmt"/>
+        <line num="46" count="10" type="stmt"/>
+        <line num="47" count="10" type="stmt"/>
+        <line num="48" count="10" type="stmt"/>
+        <line num="49" count="10" type="stmt"/>
+        <line num="50" count="10" type="stmt"/>
+        <line num="51" count="10" type="stmt"/>
+        <line num="52" count="10" type="stmt"/>
+        <line num="53" count="27" type="stmt"/>
+        <line num="54" count="10" type="stmt"/>
+        <line num="55" count="10" type="stmt"/>
+        <line num="56" count="10" type="stmt"/>
+        <line num="57" count="10" type="stmt"/>
+        <line num="58" count="10" type="stmt"/>
+        <line num="59" count="10" type="stmt"/>
+        <line num="60" count="10" type="stmt"/>
+        <line num="61" count="10" type="stmt"/>
+        <line num="62" count="10" type="stmt"/>
+        <line num="63" count="10" type="stmt"/>
+      </file>
+      <file name="isEqual.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isEqual.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="isFalse.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isFalse.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="74" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+      </file>
+      <file name="isFalsy.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isFalsy.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="isFn.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isFn.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="69" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+      </file>
+      <file name="isNotEqual.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isNotEqual.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="isNotNullish.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isNotNullish.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="isNotStrictEqual.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isNotStrictEqual.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="isNullish.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isNullish.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="isNumber.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isNumber.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="281" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="11" type="stmt"/>
+      </file>
+      <file name="isNumbers.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isNumbers.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="cond" truecount="0" falsecount="3"/>
+        <line num="8" count="10" type="stmt"/>
+      </file>
+      <file name="isObject.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isObject.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="cond" truecount="0" falsecount="2"/>
+        <line num="6" count="10" type="stmt"/>
+      </file>
+      <file name="isRealNumber.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isRealNumber.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="261" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="11" type="stmt"/>
+      </file>
+      <file name="isRealPoint.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isRealPoint.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="64" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="10" type="stmt"/>
+      </file>
+      <file name="isStrictEqual.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isStrictEqual.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+      </file>
+      <file name="isString.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isString.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="cond" truecount="0" falsecount="2"/>
+        <line num="5" count="10" type="stmt"/>
+      </file>
+      <file name="isTrue.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isTrue.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+      </file>
+      <file name="isTruthy.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/isTruthy.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="notEqual.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/notEqual.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="notNullish.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/notNullish.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+      </file>
+      <file name="notNullishOr.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/notNullishOr.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="11" type="stmt"/>
+      </file>
+      <file name="notStrictEqual.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/notStrictEqual.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="27" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+      </file>
+      <file name="nullish.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/nullish.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="14" type="stmt"/>
+        <line num="3" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="14" type="stmt"/>
+      </file>
+      <file name="nullishOr.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/nullishOr.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="11" type="stmt"/>
+      </file>
+      <file name="strictEqual.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/strictEqual.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="419" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+      </file>
+      <file name="truthy.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/truthy.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+      </file>
+      <file name="truthyOr.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/assert/truthyOr.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="11" type="stmt"/>
+      </file>
+    </package>
+    <package name="functions.invoke">
+      <metrics statements="47" coveredstatements="47" conditionals="12" coveredconditionals="12" methods="11" coveredmethods="7"/>
+      <file name="index.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/invoke/index.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+      <file name="invokeAfter.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/invoke/invokeAfter.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+      </file>
+      <file name="invokeOn.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/invoke/invokeOn.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+      </file>
+      <file name="invokeOnce.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/invoke/invokeOnce.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+      <file name="invokeUntil.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/invoke/invokeUntil.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="functions.object">
+      <metrics statements="30" coveredstatements="30" conditionals="12" coveredconditionals="11" methods="6" coveredmethods="3"/>
+      <file name="getValue.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/object/getValue.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="7" count="27" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="23" type="cond" truecount="3" falsecount="1"/>
+        <line num="9" count="23" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="13" count="13" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+      </file>
+      <file name="getValueOr.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/object/getValueOr.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+      </file>
+      <file name="hasDepth.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/object/hasDepth.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="5" type="cond" truecount="4" falsecount="0"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/functions/object/index.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="math">
+      <metrics statements="83" coveredstatements="81" conditionals="18" coveredconditionals="16" methods="31" coveredmethods="31"/>
+      <file name="Vector2.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/math/Vector2.ts">
+        <metrics statements="35" coveredstatements="35" conditionals="8" coveredconditionals="8" methods="21" coveredmethods="21"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="64" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="9" count="46" type="stmt"/>
+        <line num="10" count="46" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="37" count="8" type="stmt"/>
+        <line num="38" count="8" type="stmt"/>
+        <line num="39" count="8" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="48" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="49" count="14" type="stmt"/>
+        <line num="52" count="3" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="75" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="7" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="82" count="3" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+      </file>
+      <file name="average.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/math/average.ts">
+        <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="9" count="69" type="stmt"/>
+        <line num="10" count="20" type="stmt"/>
+        <line num="11" count="69" type="stmt"/>
+        <line num="12" count="53" type="stmt"/>
+        <line num="13" count="53" type="stmt"/>
+        <line num="14" count="53" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="49" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+      <file name="isEven.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/math/isEven.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="isOdd.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/math/isOdd.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="median.ts" path="/Users/j3mpa/Projects/packages/solid-hammers/math/median.ts">
+        <metrics statements="24" coveredstatements="22" conditionals="8" coveredconditionals="6" methods="4" coveredmethods="4"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="cond" truecount="3" falsecount="1"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="21" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="28" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

@@ -8,6 +8,9 @@ export interface Vector2Shape {
 }
 
 class Vector2 implements Vector2Shape {
+  public x
+  public y
+
   constructor(x: RealNumber = 0, y: RealNumber = 0) {
     if (isStrictEqual(isRealPoint(x, y), false)) {
       throw new TypeError('Point must be a real number')
@@ -16,9 +19,6 @@ class Vector2 implements Vector2Shape {
     this.x = x
     this.y = y
   }
-
-  public x
-  public y
 
   public add(vector: Vector2) {
     return Vector2.sum(this, vector)
@@ -108,7 +108,7 @@ class Vector2 implements Vector2Shape {
     return new Vector2(normal, normal)
   }
 
-  static isVector2(vector: any) {
+  static isVector2(vector: unknown): vector is Vector2 {
     return vector instanceof Vector2
   }
 }

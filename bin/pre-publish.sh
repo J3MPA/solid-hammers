@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-yarn test:unit && tsc --noEmit false
+yarn test && tsc --noEmit false

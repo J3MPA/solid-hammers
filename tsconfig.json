@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
+    "noEmit": true,
     "target": "ES6",
-    "module": "CommonJS",
+    "module": "CommonJs",
     "strict": true,
     "outDir": ".",
-    "declaration": true,
     "sourceMap": false,
-    "noEmit": true
+    "declaration": true,
+    "resolveJsonModule": true,
+    "noUncheckedIndexedAccess": true,
+    "useUnknownInCatchVariables": true
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.*", "**/*.config.ts"]

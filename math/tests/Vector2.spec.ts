@@ -9,51 +9,85 @@ describe('Vector2', () => {
         expect(v.x).toBe(13)
         expect(v.y).toBe(37)
       })
+      it('should construct a Vector2 instance given no points', () => {
+        const v = new Vector2()
+        expect(v).toBeInstanceOf(Vector2)
+        expect(v.x).toBe(0)
+        expect(v.y).toBe(0)
+      })
+      it('should construct a Vector2 instance given undefined points', () => {
+        const v = new Vector2(undefined, undefined)
+        expect(v).toBeInstanceOf(Vector2)
+        expect(v.x).toBe(0)
+        expect(v.y).toBe(0)
+      })
     })
     describe('Sad path', () => {
-      it('should throw TypeError if Vector2 is instantiated with x as a non real number', () => {
-        expect(() => new Vector2('some' as any, 2)).toThrow(TypeError)
-        expect(
-          () => new Vector2('some' as any, 2)
-        ).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(NaN, 2)).toThrow(TypeError)
-        expect(() => new Vector2(NaN, 2)).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(Infinity, 2)).toThrow(TypeError)
-        expect(() => new Vector2(Infinity, 2)).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(true as any, 2)).toThrow(TypeError)
-        expect(() => new Vector2(true as any, 2)).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(false as any, 2)).toThrow(TypeError)
-        expect(
-          () => new Vector2(false as any, 2)
-        ).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(null as any, 2)).toThrow(TypeError)
-        expect(() => new Vector2(null as any, 2)).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(undefined as any, 2)).toThrow(TypeError)
-        expect(
-          () => new Vector2(undefined as any, 2)
-        ).toThrowErrorMatchingSnapshot()
-      })
-      it('should throw TypeError if Vector2 is instantiated with y as a non real number', () => {
-        expect(() => new Vector2(2, 'some' as any)).toThrow(TypeError)
-        expect(
-          () => new Vector2(2, 'some' as any)
-        ).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(2, NaN)).toThrow(TypeError)
-        expect(() => new Vector2(2, NaN)).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(2, Infinity)).toThrow(TypeError)
-        expect(() => new Vector2(2, Infinity)).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(2, true as any)).toThrow(TypeError)
-        expect(() => new Vector2(2, true as any)).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(2, false as any)).toThrow(TypeError)
-        expect(
-          () => new Vector2(2, false as any)
-        ).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(2, null as any)).toThrow(TypeError)
-        expect(() => new Vector2(2, null as any)).toThrowErrorMatchingSnapshot()
-        expect(() => new Vector2(2, undefined as any)).toThrow(TypeError)
-        expect(
-          () => new Vector2(2, undefined as any)
-        ).toThrowErrorMatchingSnapshot()
+      describe('should throw TypeError if Vector2 is instantiated with x or y as a non real number', () => {
+        it('string', () => {
+          expect(() => new Vector2('some' as any, 2)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(2, 'some' as any)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2('' as any, 2)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(2, '' as any)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+        })
+        it('Infinity', () => {
+          expect(() => new Vector2(Infinity, 2)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(2, Infinity)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(-Infinity, 2)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(2, -Infinity)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+        })
+        it('NaN', () => {
+          expect(() => new Vector2(NaN, 2)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(2, NaN)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(-NaN, 2)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(2, -NaN)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+        })
+        it('boolean', () => {
+          expect(() => new Vector2(true as any, 2)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(2, true as any)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(false as any, 2)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(2, false as any)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+        })
+        it('null', () => {
+          expect(() => new Vector2(null as any, 2)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+          expect(() => new Vector2(2, null as any)).toThrow(
+            new TypeError('Point must be a real number')
+          )
+        })
       })
     })
   })
@@ -97,34 +131,13 @@ describe('Vector2', () => {
     describe('Sad path', () => {
       it('should throw TypeError if scalar is not a real number', () => {
         const v1 = new Vector2(100, 200)
-        expect(() => Vector2.scale(v1, NaN)).toThrowError(TypeError)
-        expect(() => Vector2.scale(v1, NaN)).toThrowErrorMatchingSnapshot()
-        expect(() => Vector2.scale(v1, Infinity)).toThrowError(TypeError)
-        expect(() => Vector2.scale(v1, Infinity)).toThrowErrorMatchingSnapshot()
-        expect(() => Vector2.scale(v1, 'something' as any)).toThrowError(
-          TypeError
-        )
-        expect(() =>
-          Vector2.scale(v1, 'something' as any)
-        ).toThrowErrorMatchingSnapshot()
-        expect(() => Vector2.scale(v1, true as any)).toThrowError(TypeError)
-        expect(() =>
-          Vector2.scale(v1, true as any)
-        ).toThrowErrorMatchingSnapshot()
-        expect(() => Vector2.scale(v1, false as any)).toThrowError(TypeError)
-        expect(() =>
-          Vector2.scale(v1, false as any)
-        ).toThrowErrorMatchingSnapshot()
-        expect(() => Vector2.scale(v1, null as any)).toThrowError(TypeError)
-        expect(() =>
-          Vector2.scale(v1, null as any)
-        ).toThrowErrorMatchingSnapshot()
-        expect(() => Vector2.scale(v1, undefined as any)).toThrowError(
-          TypeError
-        )
-        expect(() =>
-          Vector2.scale(v1, undefined as any)
-        ).toThrowErrorMatchingSnapshot()
+        expect(() => Vector2.scale(v1, NaN)).toThrow(TypeError)
+        expect(() => Vector2.scale(v1, Infinity)).toThrow(TypeError)
+        expect(() => Vector2.scale(v1, 'something' as any)).toThrow(TypeError)
+        expect(() => Vector2.scale(v1, true as any)).toThrow(TypeError)
+        expect(() => Vector2.scale(v1, false as any)).toThrow(TypeError)
+        expect(() => Vector2.scale(v1, null as any)).toThrow(TypeError)
+        expect(() => Vector2.scale(v1, undefined as any)).toThrow(TypeError)
       })
     })
   })
@@ -209,44 +222,15 @@ describe('Vector2', () => {
 
     describe('Sad path', () => {
       it('should throw TypeError if magnitude is not a real number', () => {
-        expect(() => Vector2.fromMagnitude(NaN)).toThrowError(TypeError)
-        expect(() => Vector2.fromMagnitude(NaN)).toThrowErrorMatchingSnapshot()
-
-        expect(() => Vector2.fromMagnitude(Infinity)).toThrowError(TypeError)
-        expect(() =>
-          Vector2.fromMagnitude(Infinity)
-        ).toThrowErrorMatchingSnapshot()
-
-        expect(() => Vector2.fromMagnitude('something' as any)).toThrowError(
+        expect(() => Vector2.fromMagnitude(NaN)).toThrow(TypeError)
+        expect(() => Vector2.fromMagnitude(Infinity)).toThrow(TypeError)
+        expect(() => Vector2.fromMagnitude('something' as any)).toThrow(
           TypeError
         )
-        expect(() =>
-          Vector2.fromMagnitude('something' as any)
-        ).toThrowErrorMatchingSnapshot()
-
-        expect(() => Vector2.fromMagnitude(false as any)).toThrowError(
-          TypeError
-        )
-        expect(() =>
-          Vector2.fromMagnitude(false as any)
-        ).toThrowErrorMatchingSnapshot()
-
-        expect(() => Vector2.fromMagnitude(true as any)).toThrowError(TypeError)
-        expect(() =>
-          Vector2.fromMagnitude(true as any)
-        ).toThrowErrorMatchingSnapshot()
-
-        expect(() => Vector2.fromMagnitude(undefined as any)).toThrowError(
-          TypeError
-        )
-        expect(() =>
-          Vector2.fromMagnitude(undefined as any)
-        ).toThrowErrorMatchingSnapshot()
-
-        expect(() => Vector2.fromMagnitude(null as any)).toThrowError(TypeError)
-        expect(() =>
-          Vector2.fromMagnitude(null as any)
-        ).toThrowErrorMatchingSnapshot()
+        expect(() => Vector2.fromMagnitude(false as any)).toThrow(TypeError)
+        expect(() => Vector2.fromMagnitude(true as any)).toThrow(TypeError)
+        expect(() => Vector2.fromMagnitude(undefined as any)).toThrow(TypeError)
+        expect(() => Vector2.fromMagnitude(null as any)).toThrow(TypeError)
       })
     })
   })
@@ -403,20 +387,13 @@ describe('Vector2', () => {
     describe('Sad path', () => {
       it('should throw TypeError if scalar is not a real number', () => {
         const v1 = new Vector2(100, 200)
-        expect(() => v1.scale(NaN)).toThrowError(TypeError)
-        expect(() => v1.scale(NaN)).toThrowErrorMatchingSnapshot()
-        expect(() => v1.scale(Infinity)).toThrowError(TypeError)
-        expect(() => v1.scale(Infinity)).toThrowErrorMatchingSnapshot()
-        expect(() => v1.scale('some' as any)).toThrowError(TypeError)
-        expect(() => v1.scale('some' as any)).toThrowErrorMatchingSnapshot()
-        expect(() => v1.scale(true as any)).toThrowError(TypeError)
-        expect(() => v1.scale(true as any)).toThrowErrorMatchingSnapshot()
-        expect(() => v1.scale(false as any)).toThrowError(TypeError)
-        expect(() => v1.scale(false as any)).toThrowErrorMatchingSnapshot()
-        expect(() => v1.scale(null as any)).toThrowError(TypeError)
-        expect(() => v1.scale(null as any)).toThrowErrorMatchingSnapshot()
-        expect(() => v1.scale(undefined as any)).toThrowError(TypeError)
-        expect(() => v1.scale(undefined as any)).toThrowErrorMatchingSnapshot()
+        expect(() => v1.scale(NaN)).toThrow(TypeError)
+        expect(() => v1.scale(Infinity)).toThrow(TypeError)
+        expect(() => v1.scale('some' as any)).toThrow(TypeError)
+        expect(() => v1.scale(true as any)).toThrow(TypeError)
+        expect(() => v1.scale(false as any)).toThrow(TypeError)
+        expect(() => v1.scale(null as any)).toThrow(TypeError)
+        expect(() => v1.scale(undefined as any)).toThrow(TypeError)
       })
     })
   })
