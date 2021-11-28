@@ -1,4 +1,4 @@
-import average from '../average'
+import { average } from '../average'
 
 describe('average', () => {
   describe('Happy path', () => {

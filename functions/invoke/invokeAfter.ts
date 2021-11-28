@@ -1,7 +1,7 @@
 import { isRealNumber } from '../assert'
 import type { AnyFn } from '../../types'
 
-const invokeAfter = <Func extends AnyFn>(nthTime: number, fn: Func) => {
+export const invokeAfter = <Func extends AnyFn>(nthTime: number, fn: Func) => {
   if (!isRealNumber(nthTime)) {
     throw TypeError('nthTime must be a real number')
   }
@@ -11,5 +11,3 @@ const invokeAfter = <Func extends AnyFn>(nthTime: number, fn: Func) => {
     if (++inc >= nth) return fn(...args)
   }
 }
-
-export default invokeAfter

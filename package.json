@@ -18,21 +18,24 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "build": "tsc",
+    "check:types": "tsc --noEmit true",
+    "test": "yarn test:unit",
+    "test:coverage": "yarn test:unit --coverage",
     "test:unit": "jest",
-    "publish:dryrun": "npm publish --dry-run",
+    "publish:dry-run": "npm publish --dry-run",
     "prepublishOnly": "./bin/pre-publish.sh",
     "postpublish": "./bin/post-publish.sh"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "@types/node": "^14.17.0",
-    "@typescript-eslint/eslint-plugin": "^4.30.0",
-    "@typescript-eslint/parser": "^4.30.0",
-    "eslint": "^7.32.0",
-    "jest": "^27.1.0",
-    "ts-jest": "^27.0.5",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.2"
+    "@types/jest": "27.0.3",
+    "@types/node": "16.11.10",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "eslint": "8.3.0",
+    "jest": "27.3.1",
+    "ts-jest": "27.0.7",
+    "ts-node": "10.4.0",
+    "typescript": "4.5.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

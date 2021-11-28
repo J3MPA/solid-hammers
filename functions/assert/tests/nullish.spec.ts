@@ -1,4 +1,4 @@
-import nullish from '../nullish'
+import { nullish } from '../nullish'
 
 describe('nullish', () => {
   it('should return true for null', () => {

@@ -1,4 +1,4 @@
-import notNullishOr from '../notNullishOr'
+import { notNullishOr } from '../notNullishOr'
 
 describe('notNullishOr', () => {
   it('should return default value if value is null', () => {

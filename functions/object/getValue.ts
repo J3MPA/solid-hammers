@@ -1,7 +1,10 @@
 import { Path, WeakObj } from '../../types'
 import { notStrictEqual } from '../assert'
 
-const getValue = <P extends readonly (string | number)[], O extends WeakObj>(
+export const getValue = <
+  P extends readonly (string | number)[],
+  O extends WeakObj
+>(
   path: P,
   object: O
 ): Path<P extends [...infer U] ? [...U] : [...P], O> | undefined => {
@@ -17,5 +20,3 @@ const getValue = <P extends readonly (string | number)[], O extends WeakObj>(
 
   return value as Path<P extends [...infer U] ? [...U] : [...P], O> | undefined
 }
-
-export default getValue

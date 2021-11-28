@@ -1,5 +1,4 @@
-import isStrictEqual from './isStrictEqual'
+import { strictEqual } from './strictEqual'
 
-const isString = (value: unknown): value is string =>
-  isStrictEqual(typeof value, 'string') || value instanceof String
-export default isString
+export const isString = (value: unknown): value is string =>
+  strictEqual(typeof value, 'string') || value instanceof String

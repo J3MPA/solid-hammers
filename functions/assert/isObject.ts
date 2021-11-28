@@ -1,7 +1,5 @@
-import isStrictEqual from './isStrictEqual'
-import isNotStrictEqual from './isNotStrictEqual'
+import { strictEqual } from './strictEqual'
+import { notStrictEqual } from './notStrictEqual'
 
-const isObject = (maybeObj: any): maybeObj is Record<any, any> =>
-  isStrictEqual(typeof maybeObj, 'object') && isNotStrictEqual(maybeObj, null)
-
-export default isObject
+export const isObject = (maybeObj: any): maybeObj is Record<any, any> =>
+  strictEqual(typeof maybeObj, 'object') && notStrictEqual(maybeObj, null)

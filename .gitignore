@@ -4,21 +4,10 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
-
-# TS build
-./classes/
-./utils/
-./functions/
-./index.js
-./index.d.ts
 
 # Dependency directories
 node_modules/
 jspm_packages/
-
-# TypeScript v1 declaration files
-typings/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -35,3 +24,6 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+
+# testing
+coverage

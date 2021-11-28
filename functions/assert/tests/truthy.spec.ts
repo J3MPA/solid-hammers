@@ -1,4 +1,4 @@
-import truthy from '../truthy'
+import { truthy } from '../truthy'
 
 describe('truthy', () => {
   it('should return true for non empty strings', () => {

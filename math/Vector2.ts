@@ -1,4 +1,4 @@
-import { isRealNumber, isRealPoint, isStrictEqual } from '../functions/assert'
+import { isRealNumber, isRealPoint, strictEqual } from '../functions/assert'
 
 type RealNumber = number
 
@@ -7,18 +7,18 @@ export interface Vector2Shape {
   y: RealNumber
 }
 
-class Vector2 implements Vector2Shape {
+export class Vector2 implements Vector2Shape {
+  public x
+  public y
+
   constructor(x: RealNumber = 0, y: RealNumber = 0) {
-    if (isStrictEqual(isRealPoint(x, y), false)) {
+    if (strictEqual(isRealPoint(x, y), false)) {
       throw new TypeError('Point must be a real number')
     }
 
     this.x = x
     this.y = y
   }
-
-  public x
-  public y
 
   public add(vector: Vector2) {
     return Vector2.sum(this, vector)
@@ -108,9 +108,7 @@ class Vector2 implements Vector2Shape {
     return new Vector2(normal, normal)
   }
 
-  static isVector2(vector: any) {
+  static isVector2(vector: unknown): vector is Vector2 {
     return vector instanceof Vector2
   }
 }
-
-export default Vector2

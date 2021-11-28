@@ -1,4 +1,4 @@
-import getValue from '../getValue'
+import { getValue } from '../getValue'
 
 describe('getValue', () => {
   describe('Happy path', () => {
