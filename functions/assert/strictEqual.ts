@@ -1,4 +1,2 @@
-const strictEqual = <T>(valueA: unknown, valueB: T): valueA is T =>
+export const strictEqual = <T>(valueA: unknown, valueB: T): valueA is T =>
   valueA === valueB
-
-export default strictEqual

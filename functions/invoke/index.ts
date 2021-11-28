@@ -1,4 +1,4 @@
-export { default as invokeAfter } from './invokeAfter'
-export { default as invokeUntil } from './invokeUntil'
-export { default as invokeOn } from './invokeOn'
-export { default as invokeOnce } from './invokeOnce'
+export { invokeAfter } from './invokeAfter'
+export { invokeUntil } from './invokeUntil'
+export { invokeOn } from './invokeOn'
+export { invokeOnce } from './invokeOnce'

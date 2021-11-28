@@ -1,4 +1,4 @@
-import truthyOr from '../truthyOr'
+import { truthyOr } from '../truthyOr'
 
 describe('truthyOr', () => {
   it('should return default value if value is falsy', () => {

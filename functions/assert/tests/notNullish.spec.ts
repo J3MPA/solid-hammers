@@ -1,4 +1,4 @@
-import notNullish from '../notNullish'
+import { notNullish } from '../notNullish'
 
 describe('notNullish', () => {
   it('should return false for null', () => {

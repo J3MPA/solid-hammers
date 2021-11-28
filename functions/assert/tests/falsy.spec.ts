@@ -1,4 +1,4 @@
-import falsy from '../falsy'
+import { falsy } from '../falsy'
 
 describe('falsy', () => {
   it('should return false for non empty strings', () => {

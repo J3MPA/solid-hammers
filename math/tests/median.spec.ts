@@ -1,4 +1,4 @@
-import median from '../median'
+import { median } from '../median'
 
 describe('median', () => {
   describe('Happy path', () => {

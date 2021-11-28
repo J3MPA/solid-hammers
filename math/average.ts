@@ -1,6 +1,6 @@
-import isRealNumber from '../functions/assert/isRealNumber'
-import ifThis from '../functions/assert/ifThis'
-import isFalse from '../functions/assert/isFalse'
+import { isRealNumber } from '../functions/assert/isRealNumber'
+import { ifThis } from '../functions/assert/ifThis'
+import { isFalse } from '../functions/assert/isFalse'
 
 const throwTypeError = (val: any) => {
   throw new TypeError(`"${val}" is not a real number`)
@@ -8,7 +8,7 @@ const throwTypeError = (val: any) => {
 
 const isNotARealNumber = (num: any) => isFalse(isRealNumber(num))
 
-const average = (nNumbers: number[]) =>
+export const average = (nNumbers: number[]) =>
   nNumbers.reduce((acc, number, i, arr) => {
     ifThis(number, isNotARealNumber, throwTypeError)
 
@@ -17,5 +17,3 @@ const average = (nNumbers: number[]) =>
     if (isLast) return (acc + number) / nth
     return acc + number
   }, 0)
-
-export default average

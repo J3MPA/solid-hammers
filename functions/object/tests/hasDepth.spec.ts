@@ -1,4 +1,4 @@
-import hasDepth from '../hasDepth'
+import { hasDepth } from '../hasDepth'
 
 describe('hasDepth', () => {
   describe('Happy path', () => {

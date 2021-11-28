@@ -1,4 +1,4 @@
-import getValueOr from '../getValueOr'
+import { getValueOr } from '../getValueOr'
 
 describe('getValueOr', () => {
   describe('Happy path', () => {

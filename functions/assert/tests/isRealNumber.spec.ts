@@ -1,4 +1,4 @@
-import { isRealNumber } from '..'
+import { isRealNumber } from '../isRealNumber'
 
 describe('isRealNumber', () => {
   describe('Happy path', () => {

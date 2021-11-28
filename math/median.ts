@@ -1,4 +1,4 @@
-import isOdd from './isOdd'
+import { isOdd } from './isOdd'
 
 const evenNMedian = (nNumbers: number[]) => {
   const length = nNumbers.length
@@ -22,11 +22,9 @@ const oddNMedian = (nNumbers: number[]) => {
   return nNumbers[index]
 }
 
-const median = (unsortedNumbers: number[]) => {
+export const median = (unsortedNumbers: number[]) => {
   const sorted = unsortedNumbers.sort((nA, nB) => nB - nA)
   const odd = isOdd(sorted.length)
   if (odd) return oddNMedian(sorted)
   return evenNMedian(sorted)
 }
-
-export default median

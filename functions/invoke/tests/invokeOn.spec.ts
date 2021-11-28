@@ -1,4 +1,4 @@
-import invokeOn from '../invokeOn'
+import { invokeOn } from '../invokeOn'
 describe('invokeOn', () => {
   describe('Happy path', () => {
     it('should invoke fn on and only on nth call', () => {

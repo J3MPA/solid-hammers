@@ -1,4 +1,4 @@
-import falsyOr from '../falsyOr'
+import { falsyOr } from '../falsyOr'
 
 describe('falsyOr', () => {
   it('should return value if value is falsy', () => {

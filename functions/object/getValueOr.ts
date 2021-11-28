@@ -1,7 +1,7 @@
-import getValue from './getValue'
+import { getValue } from './getValue'
 import { WeakObj } from '../../types'
 
-const getValueOr = <
+export const getValueOr = <
   DefVal,
   P extends readonly (string | number)[],
   O extends WeakObj
@@ -14,5 +14,3 @@ const getValueOr = <
   if (maybeValue === undefined) return defaultValue
   return maybeValue
 }
-
-export default getValueOr

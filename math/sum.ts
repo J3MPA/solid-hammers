@@ -1,5 +1,5 @@
 import { isObject, isNumbers, isRealPoint } from '../functions'
-import Vector2, { Vector2Shape } from './Vector2'
+import { Vector2, Vector2Shape } from './Vector2'
 
 const isVector2Shape = (maybeVector2: any): maybeVector2 is Vector2Shape =>
   isObject(maybeVector2) &&
@@ -23,7 +23,9 @@ export enum SumType {
   Vector2 = 'Vector2',
 }
 
-const sum = <Addends extends number | Vector2Shape>(...addends: Addends[]) => {
+export const sum = <Addends extends number | Vector2Shape>(
+  ...addends: Addends[]
+) => {
   if (isNumbers(addends)) {
     return sumNumbers(addends)
   }
@@ -35,5 +37,3 @@ const sum = <Addends extends number | Vector2Shape>(...addends: Addends[]) => {
     'Expected addends to be of type Array<number> or Array<Vector2Shape | Vector2>'
   )
 }
-
-export default sum
