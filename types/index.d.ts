@@ -1,4 +1,6 @@
-export type Nullish = undefined | null
+export type Nullable<T> = T | null
+export type Nullish = Nullable<undefined>
+export type AnyFn = (...args: any[]) => any
 export type Falsy = Nullish | false | '' | 0 | -0 | 0n | -0n
 export type Truthy =
   | string
@@ -6,12 +8,12 @@ export type Truthy =
   | Record<any, any>
   | true
   | number
-  | ((...args: any[]) => any)
+  | AnyFn
 
-export type Fn = (...args: any[]) => any
-export type F0<T> = () => T
-export type F1<P, T> = (param: P) => T
-export type Guard<P> = (param: unknown) => param is P
+export type Fn<A, R> = (...args: A[]) => R
+export type F0<R> = () => R
+export type F1<A, R> = (arg: A) => R
+export type Guard<P> = (x: unknown) => x is P
 export type WeakObj = Record<any, any>
 export type ExtractObjectProperty<O extends WeakObj, P> = P extends keyof O
   ? O[P]

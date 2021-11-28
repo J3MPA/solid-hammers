@@ -1,7 +1,7 @@
-import { isRealNumber } from '../../math'
-import { Fn } from '../../types'
+import { isRealNumber } from '../assert'
+import type { AnyFn } from '../../types'
 
-const invokeUntil = <Func extends Fn>(nthTime: number, fn: Func) => {
+const invokeUntil = <Func extends AnyFn>(nthTime: number, fn: Func) => {
   if (!isRealNumber(nthTime)) {
     throw TypeError('nthTime must be a real number')
   }
