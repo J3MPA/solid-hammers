@@ -18,8 +18,9 @@ jobs:
         with:
           node-version: '12.x'
       - name: Install dependencies
-      - run: yarn install
-      - run: yarn test
+        run: yarn install
+      - name: test
+        run: yarn test
       - name: Add check completed
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
