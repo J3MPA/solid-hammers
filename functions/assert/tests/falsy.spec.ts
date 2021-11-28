@@ -2,7 +2,7 @@ import { falsy } from '../falsy'
 
 describe('falsy', () => {
   it('should return false for non empty strings', () => {
-    expect(falsy('string')).toBe(false)
+    expect(falsy('string')).toBe(true)
   })
   it('should return true for empty strings', () => {
     expect(falsy('')).toBe(true)
