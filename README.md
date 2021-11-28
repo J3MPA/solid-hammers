@@ -67,9 +67,9 @@ import * as assert from 'solid-hammers/functions/assert'
 import * as invoke from 'solid-hammers/functions/invoke'
 
 // Pick methods.
-import Vector2 from 'solid-hammers/math/Vector2'
-import isTruthy from 'solid-hammers/functions/assert/isTruthy'
-import invokeUntil from 'solid-hammers/functions/invoke/invokeUntil'
+import { Vector2 } from 'solid-hammers/math/Vector2'
+import { isTruthy } from 'solid-hammers/functions/assert/isTruthy'
+import { invokeUntil } from 'solid-hammers/functions/invoke/invokeUntil'
 ```
 
 ```js
@@ -83,8 +83,9 @@ var invoke = require('solid-hammers/functions/invoke')
 var functions = require('solid-hammers/functions')
 
 // Pick methods.
-var Vector2 = require('solid-hammers/math/Vector2')
-var isTruthy = require('solid-hammers/functions/assert/isTruthy')
+var { Vector2 } = require('solid-hammers/math/Vector2')
+var { isTruthy } = require('solid-hammers/functions/assert/isTruthy')
+var { invokeUntil } = require('solid-hammers/functions/invoke/invokeUntil')
 ```
 
 ### Typescript support
