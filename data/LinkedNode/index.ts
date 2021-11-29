@@ -65,7 +65,7 @@ export class LinkedNode<T = unknown> {
       case NEXT: {
         if (this.#next !== null) {
           throw new Error(
-            "Can't set next node, it's occupied by another node, use replace to unsafely set next node or unset(attr) before set(attr)"
+            "Can't set next node, it's occupied by another node, use replace(attr, node) to unsafely set next node or unset(attr) before set(attr, node)"
           )
         }
         this.#next = node
@@ -84,7 +84,7 @@ export class LinkedNode<T = unknown> {
       case PREV:
         if (this.#prev !== null) {
           throw new Error(
-            "Can't set prev node, it's occupied by another node, use replace to unsafely set prev node or unset(attr) before set(attr)"
+            "Can't set prev node, it's occupied by another node, use replace(attr, node) to unsafely set prev node or unset(attr) before set(attr, node)"
           )
         }
         this.#prev = node
