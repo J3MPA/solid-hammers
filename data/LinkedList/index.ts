@@ -1,10 +1,10 @@
 import type { Nullable } from '../../types'
-import { Node } from '../Node'
+import { LinkedNode } from '../LinkedNode'
 
 export class LinkedList<T = unknown> {
-  #head: Nullable<Node<T>> = null
-  #tail: Nullable<Node<T>> = null
-  #middle: Nullable<Node<T>> = null
+  #head: Nullable<LinkedNode<T>> = null
+  #tail: Nullable<LinkedNode<T>> = null
+  #middle: Nullable<LinkedNode<T>> = null
   #size = 0
   public get size() {
     return this.#size
@@ -12,34 +12,34 @@ export class LinkedList<T = unknown> {
   public get peak() {
     return this.#head
   }
+  public get tail() {
+    return this.#tail
+  }
   public push(value: T): LinkedList<T> {
-    const node = new Node(value)
+    const link = new LinkedNode(value)
     if (this.#tail === null || this.#head === null || this.#middle === null) {
-      this.#head = node
-      this.#middle = node
-      this.#tail = node
+      this.#head = link
+      this.#middle = link
+      this.#tail = link
     } else {
       const tail = this.#tail
       // set next
-      tail.clean(Node.Attribute.Children).addChild(node)
-      // set prev
-      node.addParent(tail)
-      this.#tail = node
+      tail.set('next', link)
+      this.#tail = link
     }
     this.#size += 1
     // if size is uneven and not strict one then make #middle the tail of #middle
     if (this.#size !== 1 && this.#size % 2 !== 0) {
-      this.#middle = this.#middle.children[0] ?? null
+      this.#middle = this.#middle
     }
     return this
   }
   public pop(): LinkedList<T> {
     if (this.#tail) {
-      const tail = this.#tail
-      const prev = tail.parents[0]
+      const prev = this.#tail.prev
       if (prev) {
-        prev.clean(Node.Attribute.Children)
-        tail.clean(Node.Attribute.Parents)
+        prev.unset('next')
+        this.#tail.unset('prev')
         this.#tail = prev
       } else {
         // no more entries
