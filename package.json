@@ -13,6 +13,7 @@
   "types": "index.d.ts",
   "files": [
     "**/*.d.ts",
+    "**/*.js.map",
     "**/*.js"
   ],
   "scripts": {
