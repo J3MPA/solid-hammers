@@ -80,7 +80,24 @@ export class Node<T = unknown> {
       return this.#children.length > 0
     }
   }
-  public add(attr: NodeAttrs, node: Node<T>) {
+  public add(attr: NodeAttrs, node: Node<T>): Node<T> {
+    switch (attr) {
+      case PARENT: {
+        if (this.hasParent(node) === false) {
+          this.#parents.push(node)
+        }
+        break
+      }
+      case CHILD: {
+        if (this.hasChild(node) === false) {
+          this.#children.push(node)
+        }
+        break
+      }
+    }
+    return this
+  }
+  public remove(attr: NodeAttrs, node: Node<T>) {
     switch (attr) {
       case PARENT: {
         if (this.hasParent(node)) {
@@ -97,23 +114,7 @@ export class Node<T = unknown> {
     }
     return this
   }
-  public remove(attr: NodeAttrs, node: Node<T>): Node<T> {
-    switch (attr) {
-      case PARENT: {
-        if (this.hasParent(node) === false) {
-          this.#parents.push(node)
-        }
-        break
-      }
-      case CHILD: {
-        if (this.hasChild(node)) {
-          this.#children.push(node)
-        }
-        break
-      }
-    }
-    return this
-  }
+
   public removeAll(attr: 'parents' | 'children') {
     switch (attr) {
       case 'parents':
