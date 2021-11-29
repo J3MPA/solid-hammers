@@ -8,6 +8,10 @@ const DEFAULT_ATTR: LinkedNodeAttrs = NEXT
 const SUPPORTED_ATTRS = new Set(ATTRS)
 const SUPPORTED_ATTRS_UNION_STRING = ATTRS.join(' | ')
 
+/**
+ * Singly linked node (maximum of one parent and child).
+ * Safety comes from having parent and child node not being movable by default. If parent or child node is occupied (set) they need to be unsafely set (replace) or unset (unset)
+ */
 export class LinkedNode<T = unknown> {
   #value: T
   #prev: Nullable<LinkedNode<T>> = null
