@@ -12,5 +12,5 @@
     "useUnknownInCatchVariables": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.*", "**/*.config.ts"]
+  "exclude": ["node_modules", "**/*.config.ts"]
 }

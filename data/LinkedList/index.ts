@@ -1,7 +1,7 @@
 import type { Nullable } from '../../types'
 import { LinkedNode } from '../LinkedNode'
 
-export class LinkedList<T = unknown> {
+export class LinkedList<T = never> {
   #head: Nullable<LinkedNode<T>> = null
   #tail: Nullable<LinkedNode<T>> = null
   #middle: Nullable<LinkedNode<T>> = null
@@ -9,33 +9,43 @@ export class LinkedList<T = unknown> {
   public get size() {
     return this.#size
   }
-  public get peak() {
+  public get head() {
     return this.#head
+  }
+  public get middle() {
+    return this.#middle
   }
   public get tail() {
     return this.#tail
   }
-  public push(value: T): LinkedList<T> {
-    const link = new LinkedNode(value)
-    if (this.#tail === null || this.#head === null || this.#middle === null) {
+  constructor(value?: T) {
+    if (value) {
+      const link = new LinkedNode(value)
       this.#head = link
       this.#middle = link
       this.#tail = link
-    } else {
-      const tail = this.#tail
-      // set next
-      tail.link('next', link)
-      this.#tail = link
+      this.#size++
     }
-    this.#size += 1
-    // if size is uneven and not strict one then make #middle the tail of #middle
-    if (this.#size !== 1 && this.#size % 2 !== 0) {
-      this.#middle = this.#middle
+  }
+  public push(value: T): LinkedList<T> {
+    const node = new LinkedNode(value)
+    if (!this.#tail) {
+      // no #tails indicates the LinkedList is empty, also true for #head and #middle
+      this.#head = node
+      this.#middle = node
+      this.#tail = node
+    } else {
+      this.#tail = node.link('prev', this.#tail)
+    }
+    this.#size++
+    // if size is bigger than two and rest is one when divided by two, shift middle
+    if (this.#size > 2 && this.#size % 2 === 1 && this.#middle !== null) {
+      this.#middle = this.#middle.next
     }
     return this
   }
   public pop(): LinkedList<T> {
-    if (this.#tail) {
+    if (this.#tail && this.#size) {
       const prev = this.#tail.prev
       if (prev) {
         prev.unlink('next')
@@ -48,6 +58,9 @@ export class LinkedList<T = unknown> {
         this.#tail = null
       }
       this.#size -= 1
+      if (this.#size > 1 && this.#size % 2 === 0 && this.#middle !== null) {
+        this.#middle = this.#middle.prev
+      }
     }
     return this
   }
