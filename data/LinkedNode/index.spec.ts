@@ -43,79 +43,79 @@ describe('LinkedNode', () => {
       () => new LinkedNode('prev', new LinkedNode('1'), '1' as any)
     ).toThrowErrorMatchingSnapshot()
   })
-  describe('set', () => {
+  describe('link', () => {
     describe('Happy path', () => {
-      it('should set next node given a LinkedNode instance and attr next. next node should have current node as prev', () => {
+      it('should link next node given a LinkedNode instance and attr next. next node should have current node as prev', () => {
         const node = new LinkedNode('node')
         const next = new LinkedNode('next')
 
-        const nodeSet = jest.spyOn(node, 'set')
-        const nodeUnset = jest.spyOn(node, 'unset')
-        const nodeReplace = jest.spyOn(node, 'replace')
-        const nextSet = jest.spyOn(next, 'set')
-        const nextUnset = jest.spyOn(next, 'unset')
-        const nextReplace = jest.spyOn(next, 'replace')
+        const nodeLink = jest.spyOn(node, 'link')
+        const nodeUnlink = jest.spyOn(node, 'unlink')
+        const nodeChange = jest.spyOn(node, 'change')
+        const nextLink = jest.spyOn(next, 'link')
+        const nextUnlink = jest.spyOn(next, 'unlink')
+        const nextChange = jest.spyOn(next, 'change')
 
         expect(node.next).toBe(null)
         expect(node.prev).toBe(null)
 
-        node.set('next', next)
+        node.link('next', next)
         expect(node.prev).toBe(null)
         expect(node.next).toBe(next)
         expect(next.prev).toBe(node)
         expect(next.next).toBe(null)
-        expect(nodeSet).toHaveBeenCalledTimes(1)
-        expect(nodeUnset).toHaveBeenCalledTimes(0)
-        expect(nodeReplace).toHaveBeenCalledTimes(0)
-        expect(nextSet).toHaveBeenCalledTimes(1)
-        expect(nextSet).toHaveBeenCalledWith('prev', node)
-        expect(nextUnset).toHaveBeenCalledTimes(0)
-        expect(nextReplace).toHaveBeenCalledTimes(0)
+        expect(nodeLink).toHaveBeenCalledTimes(1)
+        expect(nodeUnlink).toHaveBeenCalledTimes(0)
+        expect(nodeChange).toHaveBeenCalledTimes(0)
+        expect(nextLink).toHaveBeenCalledTimes(1)
+        expect(nextLink).toHaveBeenCalledWith('prev', node)
+        expect(nextUnlink).toHaveBeenCalledTimes(0)
+        expect(nextChange).toHaveBeenCalledTimes(0)
       })
-      it('should set prev node given a LinkedNode instance and attr prev. next node should have current node as next', () => {
+      it('should link prev node given a LinkedNode instance and attr prev. next node should have current node as next', () => {
         const node = new LinkedNode('node')
         const prev = new LinkedNode('prev')
 
-        const nodeSet = jest.spyOn(node, 'set')
-        const nodeUnset = jest.spyOn(node, 'unset')
-        const nodeReplace = jest.spyOn(node, 'replace')
-        const prevSet = jest.spyOn(prev, 'set')
-        const prevUnset = jest.spyOn(prev, 'unset')
-        const prevReplace = jest.spyOn(prev, 'replace')
+        const nodeLink = jest.spyOn(node, 'link')
+        const nodeUnlink = jest.spyOn(node, 'unlink')
+        const nodeChange = jest.spyOn(node, 'change')
+        const prevLink = jest.spyOn(prev, 'link')
+        const prevUnlink = jest.spyOn(prev, 'unlink')
+        const prevChange = jest.spyOn(prev, 'change')
 
-        node.set('prev', prev)
+        node.link('prev', prev)
         expect(prev.prev).toBe(null)
         expect(prev.next).toBe(node)
         expect(node.prev).toBe(prev)
         expect(node.next).toBe(null)
-        expect(nodeSet).toHaveBeenCalledTimes(1)
-        expect(nodeUnset).toHaveBeenCalledTimes(0)
-        expect(nodeReplace).toHaveBeenCalledTimes(0)
-        expect(prevSet).toHaveBeenCalledTimes(1)
-        expect(prevSet).toHaveBeenCalledWith('next', node)
-        expect(prevUnset).toHaveBeenCalledTimes(0)
-        expect(prevReplace).toHaveBeenCalledTimes(0)
+        expect(nodeLink).toHaveBeenCalledTimes(1)
+        expect(nodeUnlink).toHaveBeenCalledTimes(0)
+        expect(nodeChange).toHaveBeenCalledTimes(0)
+        expect(prevLink).toHaveBeenCalledTimes(1)
+        expect(prevLink).toHaveBeenCalledWith('next', node)
+        expect(prevUnlink).toHaveBeenCalledTimes(0)
+        expect(prevChange).toHaveBeenCalledTimes(0)
       })
     })
     describe('Sad path', () => {
       it('should throw if next node is not an instance of LinkedNode', () => {
         expect(() =>
-          new LinkedNode('node').set('next' as any, 'next' as any)
+          new LinkedNode('node').link('next' as any, 'next' as any)
         ).toThrowErrorMatchingSnapshot()
       })
       it('should throw if prev node is not an instance of LinkedNode', () => {
         expect(() =>
-          new LinkedNode('node').set('prev' as any, 'prev' as any)
+          new LinkedNode('node').link('prev' as any, 'prev' as any)
         ).toThrowErrorMatchingSnapshot()
       })
       it('should throw if attr is not supported', () => {
         expect(() =>
-          new LinkedNode('node').set('random' as any, new LinkedNode('next'))
+          new LinkedNode('node').link('random' as any, new LinkedNode('next'))
         ).toThrowErrorMatchingSnapshot()
       })
       it('should throw if next node is occupied', () => {
         expect(() =>
-          new LinkedNode('node', undefined, new LinkedNode('next')).set(
+          new LinkedNode('node', undefined, new LinkedNode('next')).link(
             'next',
             new LinkedNode('new')
           )
@@ -123,7 +123,7 @@ describe('LinkedNode', () => {
       })
       it('should throw if prev node is occupied', () => {
         expect(() =>
-          new LinkedNode('node', new LinkedNode('prev'), undefined).set(
+          new LinkedNode('node', new LinkedNode('prev'), undefined).link(
             'prev',
             new LinkedNode('new')
           )
@@ -131,85 +131,85 @@ describe('LinkedNode', () => {
       })
     })
   })
-  describe('unset', () => {
+  describe('unlink', () => {
     describe('Happy path', () => {
-      it('should unset next node given a LinkedNode instance and no attr', () => {
+      it('should unlink next node given a LinkedNode instance and no attr', () => {
         const node = new LinkedNode('node')
         const next = new LinkedNode('next')
 
-        node.set('next', next)
+        node.link('next', next)
 
-        const nodeSet = jest.spyOn(node, 'set')
-        const nodeUnset = jest.spyOn(node, 'unset')
-        const nextSet = jest.spyOn(next, 'set')
-        const nextUnset = jest.spyOn(next, 'unset')
+        const nodeLink = jest.spyOn(node, 'link')
+        const nodeUnlink = jest.spyOn(node, 'unlink')
+        const nextLink = jest.spyOn(next, 'link')
+        const nextUnlink = jest.spyOn(next, 'unlink')
 
-        node.unset()
+        node.unlink()
 
         expect(node.prev).toBe(null)
         expect(node.next).toBe(null)
         expect(next.prev).toBe(null)
         expect(next.next).toBe(null)
 
-        expect(nodeSet).toHaveBeenCalledTimes(0)
-        expect(nodeUnset).toHaveBeenCalledTimes(1)
-        expect(nextSet).toHaveBeenCalledTimes(0)
-        expect(nextUnset).toHaveBeenCalledTimes(1)
-        expect(nextUnset).toHaveBeenCalledWith('prev')
+        expect(nodeLink).toHaveBeenCalledTimes(0)
+        expect(nodeUnlink).toHaveBeenCalledTimes(1)
+        expect(nextLink).toHaveBeenCalledTimes(0)
+        expect(nextUnlink).toHaveBeenCalledTimes(1)
+        expect(nextUnlink).toHaveBeenCalledWith('prev')
       })
-      it('should unset next node given a LinkedNode instance and next attr', () => {
+      it('should unlink next node given a LinkedNode instance and next attr', () => {
         const node = new LinkedNode('node')
         const next = new LinkedNode('next')
 
-        node.set('next', next)
+        node.link('next', next)
 
-        const nodeSet = jest.spyOn(node, 'set')
-        const nodeUnset = jest.spyOn(node, 'unset')
-        const nextSet = jest.spyOn(next, 'set')
-        const nextUnset = jest.spyOn(next, 'unset')
+        const nodeLink = jest.spyOn(node, 'link')
+        const nodeUnlink = jest.spyOn(node, 'unlink')
+        const nextLink = jest.spyOn(next, 'link')
+        const nextUnlink = jest.spyOn(next, 'unlink')
 
-        node.unset('next')
+        node.unlink('next')
 
         expect(node.prev).toBe(null)
         expect(node.next).toBe(null)
         expect(next.prev).toBe(null)
         expect(next.next).toBe(null)
 
-        expect(nodeSet).toHaveBeenCalledTimes(0)
-        expect(nodeUnset).toHaveBeenCalledTimes(1)
-        expect(nextSet).toHaveBeenCalledTimes(0)
-        expect(nextUnset).toHaveBeenCalledTimes(1)
-        expect(nextUnset).toHaveBeenCalledWith('prev')
+        expect(nodeLink).toHaveBeenCalledTimes(0)
+        expect(nodeUnlink).toHaveBeenCalledTimes(1)
+        expect(nextLink).toHaveBeenCalledTimes(0)
+        expect(nextUnlink).toHaveBeenCalledTimes(1)
+        expect(nextUnlink).toHaveBeenCalledWith('prev')
       })
-      it('should unset prev node given a LinkedNode instance and next prev', () => {
+      it('should unlink prev node given a LinkedNode instance and next prev', () => {
         const node = new LinkedNode('node')
         const prev = new LinkedNode('prev')
 
-        node.set('prev', prev)
+        node.link('prev', prev)
 
-        const nodeSet = jest.spyOn(node, 'set')
-        const nodeUnset = jest.spyOn(node, 'unset')
-        const prevSet = jest.spyOn(prev, 'set')
-        const prevUnset = jest.spyOn(prev, 'unset')
+        const nodeLink = jest.spyOn(node, 'link')
+        const nodeUnlink = jest.spyOn(node, 'unlink')
+        const prevLink = jest.spyOn(prev, 'link')
+        const prevUnlink = jest.spyOn(prev, 'unlink')
 
-        node.unset('prev')
+        node.unlink('prev')
 
         expect(node.prev).toBe(null)
         expect(node.next).toBe(null)
         expect(prev.prev).toBe(null)
         expect(prev.next).toBe(null)
 
-        expect(nodeSet).toHaveBeenCalledTimes(0)
-        expect(nodeUnset).toHaveBeenCalledTimes(1)
-        expect(prevSet).toHaveBeenCalledTimes(0)
-        expect(prevUnset).toHaveBeenCalledTimes(1)
-        expect(prevUnset).toHaveBeenCalledWith('next')
+        expect(nodeLink).toHaveBeenCalledTimes(0)
+        expect(nodeUnlink).toHaveBeenCalledTimes(1)
+        expect(prevLink).toHaveBeenCalledTimes(0)
+        expect(prevUnlink).toHaveBeenCalledTimes(1)
+        expect(prevUnlink).toHaveBeenCalledWith('next')
       })
     })
     describe('Sad path', () => {
       it('should throw if attr is not supported', () => {
         expect(() =>
-          new LinkedNode('node').unset('random' as any)
+          new LinkedNode('node').unlink('random' as any)
         ).toThrowErrorMatchingSnapshot()
       })
     })

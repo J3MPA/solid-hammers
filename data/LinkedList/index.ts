@@ -24,7 +24,7 @@ export class LinkedList<T = unknown> {
     } else {
       const tail = this.#tail
       // set next
-      tail.set('next', link)
+      tail.link('next', link)
       this.#tail = link
     }
     this.#size += 1
@@ -38,8 +38,8 @@ export class LinkedList<T = unknown> {
     if (this.#tail) {
       const prev = this.#tail.prev
       if (prev) {
-        prev.unset('next')
-        this.#tail.unset('prev')
+        prev.unlink('next')
+        this.#tail.unlink('prev')
         this.#tail = prev
       } else {
         // no more entries

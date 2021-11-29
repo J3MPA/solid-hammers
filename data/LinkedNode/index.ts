@@ -3,7 +3,7 @@ import type { Nullable } from '../../types'
 const NEXT = 'next' as const
 const PREV = 'prev' as const
 const ATTRS = [NEXT, PREV]
-type LinkedNodeAttrs = typeof NEXT | typeof PREV
+type LinkedNodeAttrs = typeof ATTRS extends readonly (infer T)[] ? T : never
 const DEFAULT_ATTR: LinkedNodeAttrs = NEXT
 const SUPPORTED_ATTRS = new Set(ATTRS)
 const SUPPORTED_ATTRS_UNION_STRING = ATTRS.join(' | ')
@@ -23,12 +23,12 @@ export class LinkedNode<T = unknown> {
   ) {
     this.#value = value
     if (LinkedNode.isLinkedNode(next)) {
-      this.set(NEXT, next)
+      this.link(NEXT, next)
     } else if (next !== null) {
       throw new TypeError('next node must be of type LinkedNode')
     }
     if (LinkedNode.isLinkedNode(prev)) {
-      this.set(PREV, prev)
+      this.link(PREV, prev)
     } else if (prev !== null) {
       throw new TypeError('prev node must be of type LinkedNode')
     }
@@ -50,18 +50,18 @@ export class LinkedNode<T = unknown> {
     return this.#value
   }
   /**
-   * Safely sets `next` or `prev` node. If nodes are currently occupied an exception is raised.
-   * @param node the LinkNode to set
-   * @param attr attribute to set `next` or `prev`
+   * Safely links `next` or `prev` node. If nodes are currently occupied an exception is raised.
+   * @param node the LinkNode to link
+   * @param attr attribute to link `next` or `prev`
    * @returns `LinkedNode`
    */
-  public set(attr: LinkedNodeAttrs, node: LinkedNode<T>): LinkedNode<T> {
+  public link(attr: LinkedNodeAttrs, node: LinkedNode<T>): LinkedNode<T> {
     if (LinkedNode.isLinkedNode(node) === false) {
       throw new TypeError(`${attr} node must be of type LinkedNode`)
     }
     if (SUPPORTED_ATTRS.has(attr) === false) {
       throw TypeError(
-        `Can't set attribute ${attr}, supported attributes: ${SUPPORTED_ATTRS_UNION_STRING}`
+        `Can't link attribute ${attr}, supported attributes: ${SUPPORTED_ATTRS_UNION_STRING}`
       )
     }
 
@@ -69,18 +69,18 @@ export class LinkedNode<T = unknown> {
       case NEXT: {
         if (this.#next !== null) {
           throw new Error(
-            "Can't set next node, it's occupied by another node, use replace(attr, node) to unsafely set next node or unset(attr) before set(attr, node)"
+            "Can't link next node, it's occupied by another node, use change(attr, node) to unsafely link next node or unlink(attr) before link(attr, node)"
           )
         }
         this.#next = node
         switch (node.prev) {
           case null:
-            node.set(PREV, this)
+            node.link(PREV, this)
             break
           case this:
             break
           default:
-            node.replace(PREV, this)
+            node.change(PREV, this)
             break
         }
         break
@@ -88,18 +88,18 @@ export class LinkedNode<T = unknown> {
       case PREV:
         if (this.#prev !== null) {
           throw new Error(
-            "Can't set prev node, it's occupied by another node, use replace(attr, node) to unsafely set prev node or unset(attr) before set(attr, node)"
+            "Can't link prev node, it's occupied by another node, use change(attr, node) to unsafely link prev node or unlink(attr) before link(attr, node)"
           )
         }
         this.#prev = node
         switch (node.next) {
           case null:
-            node.set(NEXT, this)
+            node.link(NEXT, this)
             break
           case this:
             break
           default:
-            node.replace(NEXT, this)
+            node.change(NEXT, this)
             break
         }
         break
@@ -108,11 +108,11 @@ export class LinkedNode<T = unknown> {
   }
   /**
    * Unsafely sets (replaces) `next` or `prev` node. If nodes are currently occupied they will be replaced by new node. Same as `node.unset(attr).set(newNode, attr)`
-   * @param node the LinkNode to set
-   * @param attr attribute to set `next` or `prev`
+   * @param node the LinkNode to replace
+   * @param attr attribute to replace `next` or `prev`
    * @returns `LinkedNode`
    */
-  public replace(attr: LinkedNodeAttrs, node: LinkedNode<T>): LinkedNode<T> {
+  public change(attr: LinkedNodeAttrs, node: LinkedNode<T>): LinkedNode<T> {
     if (LinkedNode.isLinkedNode(node) === false) {
       throw new TypeError(`${attr} node must be of type LinkedNode`)
     }
@@ -121,14 +121,14 @@ export class LinkedNode<T = unknown> {
         `Can't shift attribute ${attr}, supported attributes: ${SUPPORTED_ATTRS_UNION_STRING}`
       )
     }
-    return this.unset(attr).set(attr, node)
+    return this.unlink(attr).link(attr, node)
   }
   /**
    * Unset `next` or `prev` node.
    * @param attr `next` or `prev`, default `next`
    * @returns `LinkedNode`
    */
-  public unset(attr: LinkedNodeAttrs = DEFAULT_ATTR): LinkedNode<T> {
+  public unlink(attr: LinkedNodeAttrs = DEFAULT_ATTR): LinkedNode<T> {
     if (SUPPORTED_ATTRS.has(attr) === false) {
       throw TypeError(
         `Can't unset attribute ${attr}, supported attributes: ${SUPPORTED_ATTRS_UNION_STRING}`
@@ -140,7 +140,7 @@ export class LinkedNode<T = unknown> {
         const next = this.#next
         this.#next = null
         if (next?.prev === this) {
-          next.unset(PREV)
+          next.unlink(PREV)
         }
         break
       }
@@ -148,7 +148,7 @@ export class LinkedNode<T = unknown> {
         const prev = this.#prev
         this.#prev = null
         if (prev?.next === this) {
-          prev.unset(NEXT)
+          prev.unlink(NEXT)
         }
         break
       }
@@ -161,10 +161,8 @@ export class LinkedNode<T = unknown> {
    * @returns `LinkedNode`
    */
   public map(fn: (value: T) => T): LinkedNode<T> {
-    const newLink = LinkedNode.new(fn(this.#value), this.#prev, this.#next)
-    this.#next = null
-    this.#prev = null
-    return newLink
+    this.#value = fn(this.#value)
+    return this
   }
   /**
    * Check if unknown node is same instance

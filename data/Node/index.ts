@@ -1,12 +1,13 @@
 import { arrayStrict } from '../proxy-handlers'
 
-enum NodeAttribute {
-  Parents,
-  Children,
-}
+const CHILD = 'child' as const
+const PARENT = 'parent' as const
+const ATTRS = [CHILD, PARENT]
+type NodeAttrs = typeof ATTRS extends readonly (infer T)[] ? T : never
+// const SUPPORTED_ATTRS = new Set(ATTRS)
+// const SUPPORTED_ATTRS_UNION_STRING = ATTRS.join(' | ')
 
 export class Node<T = unknown> {
-  static Attribute = NodeAttribute
   #value: T
   #parents: Node<T>[] = []
   #children: Node<T>[] = []
@@ -35,14 +36,6 @@ export class Node<T = unknown> {
   }
   public update(value: T): Node<T> {
     this.#value = value
-    return this
-  }
-  public addParent<N extends Node<T>>(node: N): Node<T> {
-    this.#parents.push(node)
-    return this
-  }
-  public addChild<N extends Node<T>>(node: N): Node<T> {
-    this.#children.push(node)
     return this
   }
   /**
@@ -87,16 +80,53 @@ export class Node<T = unknown> {
       return this.#children.length > 0
     }
   }
-  public clean(type: NodeAttribute) {
-    switch (type) {
-      case NodeAttribute.Parents:
-        this.#parents = []
-        return this
-      case NodeAttribute.Children:
-        this.#children = []
-        return this
-      default:
-        return this
+  public add(attr: NodeAttrs, node: Node<T>) {
+    switch (attr) {
+      case PARENT: {
+        if (this.hasParent(node)) {
+          this.#parents.splice(this.#parents.indexOf(node), 1)
+        }
+        break
+      }
+      case CHILD: {
+        if (this.hasChild(node)) {
+          this.#children.splice(this.#children.indexOf(node), 1)
+        }
+        break
+      }
     }
+    return this
+  }
+  public remove(attr: NodeAttrs, node: Node<T>): Node<T> {
+    switch (attr) {
+      case PARENT: {
+        if (this.hasParent(node) === false) {
+          this.#parents.push(node)
+        }
+        break
+      }
+      case CHILD: {
+        if (this.hasChild(node)) {
+          this.#children.push(node)
+        }
+        break
+      }
+    }
+    return this
+  }
+  public removeAll(attr: 'parents' | 'children') {
+    switch (attr) {
+      case 'parents':
+        for (const parent of this.#parents) {
+          parent.remove('child', this)
+        }
+        break
+      case 'children':
+        for (const child of this.#children) {
+          child.remove('parent', this)
+        }
+        break
+    }
+    return this
   }
 }
