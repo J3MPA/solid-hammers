@@ -14,4 +14,4 @@ exports[`LinkedNode should throw error if LinkedNode is instantiated with next a
 
 exports[`LinkedNode should throw error if LinkedNode is instantiated with prev as non nullish LinkedNode 1`] = `"prev node must be of type LinkedNode"`;
 
-exports[`LinkedNode unlink Sad path should throw if attr is not supported 1`] = `"Can't unset attribute random, supported attributes: next | prev"`;
+exports[`LinkedNode unlink Sad path should throw if attr is not supported 1`] = `"Can't unlink attribute random, supported attributes: next | prev"`;

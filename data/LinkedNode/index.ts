@@ -10,7 +10,7 @@ const SUPPORTED_ATTRS_UNION_STRING = ATTRS.join(' | ')
 
 /**
  * Singly linked node (maximum of one parent and child).
- * Safety comes from having parent and child node not being movable by default. If parent or child node is occupied (set) they need to be unsafely set (replace) or unset (unset)
+ * Safety comes from having parent and child node not being movable by default. If parent or child node is occupied (linked) they need to be unsafely linked (changed) or unlinked (unlink)
  */
 export class LinkedNode<T = unknown> {
   #value: T
@@ -107,9 +107,9 @@ export class LinkedNode<T = unknown> {
     return this
   }
   /**
-   * Unsafely sets (replaces) `next` or `prev` node. If nodes are currently occupied they will be replaced by new node. Same as `node.unset(attr).set(newNode, attr)`
-   * @param node the LinkNode to replace
-   * @param attr attribute to replace `next` or `prev`
+   * Unsafely links (changes) `next` or `prev` node. If nodes are currently occupied they will be link by new node. Same as `node.unlink(attr).link(newNode, attr)`
+   * @param node the LinkNode to change to
+   * @param attr attribute to change `next` or `prev`
    * @returns `LinkedNode`
    */
   public change(attr: LinkedNodeAttrs, node: LinkedNode<T>): LinkedNode<T> {
@@ -124,14 +124,14 @@ export class LinkedNode<T = unknown> {
     return this.unlink(attr).link(attr, node)
   }
   /**
-   * Unset `next` or `prev` node.
+   * Unlinks `next` or `prev` node.
    * @param attr `next` or `prev`, default `next`
    * @returns `LinkedNode`
    */
   public unlink(attr: LinkedNodeAttrs = DEFAULT_ATTR): LinkedNode<T> {
     if (SUPPORTED_ATTRS.has(attr) === false) {
       throw TypeError(
-        `Can't unset attribute ${attr}, supported attributes: ${SUPPORTED_ATTRS_UNION_STRING}`
+        `Can't unlink attribute ${attr}, supported attributes: ${SUPPORTED_ATTRS_UNION_STRING}`
       )
     }
 
