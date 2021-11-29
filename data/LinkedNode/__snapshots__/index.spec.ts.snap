@@ -2,10 +2,16 @@
 
 exports[`LinkedNode set Sad path should throw if attr is not supported 1`] = `"Can't set attribute random, supported attributes: next | prev"`;
 
+exports[`LinkedNode set Sad path should throw if next node is not an instance of LinkedNode 1`] = `"next node must be of type LinkedNode"`;
+
 exports[`LinkedNode set Sad path should throw if next node is occupied 1`] = `"Can't set next node, it's occupied by another node, use replace(attr, node) to unsafely set next node or unset(attr) before set(attr, node)"`;
 
-exports[`LinkedNode set Sad path should throw if node is not an instance of LinkedNode 1`] = `"next node must be of type LinkedNode"`;
+exports[`LinkedNode set Sad path should throw if prev node is not an instance of LinkedNode 1`] = `"prev node must be of type LinkedNode"`;
 
 exports[`LinkedNode set Sad path should throw if prev node is occupied 1`] = `"Can't set prev node, it's occupied by another node, use replace(attr, node) to unsafely set prev node or unset(attr) before set(attr, node)"`;
+
+exports[`LinkedNode should throw error if LinkedNode is instantiated with next as non nullish LinkedNode 1`] = `"next node must be of type LinkedNode"`;
+
+exports[`LinkedNode should throw error if LinkedNode is instantiated with prev as non nullish LinkedNode 1`] = `"prev node must be of type LinkedNode"`;
 
 exports[`LinkedNode unset Sad path should throw if attr is not supported 1`] = `"Can't unset attribute random, supported attributes: next | prev"`;

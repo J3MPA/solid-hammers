@@ -21,6 +21,28 @@ describe('LinkedNode', () => {
     expect(next.prev).toBe(mid)
     expect(next.next).toBe(null)
   })
+  it('should throw error if LinkedNode is instantiated with prev as non nullish LinkedNode', () => {
+    expect(() => new LinkedNode('prev', new LinkedNode('1'))).not.toThrow(Error)
+    expect(() => new LinkedNode('prev', null)).not.toThrow(Error)
+    expect(() => new LinkedNode('prev', undefined)).not.toThrow(Error)
+    expect(
+      () => new LinkedNode('prev', '1' as any)
+    ).toThrowErrorMatchingSnapshot()
+  })
+  it('should throw error if LinkedNode is instantiated with next as non nullish LinkedNode', () => {
+    expect(
+      () => new LinkedNode('prev', new LinkedNode('1'), new LinkedNode('1'))
+    ).not.toThrow(Error)
+    expect(() => new LinkedNode('prev', new LinkedNode('1'), null)).not.toThrow(
+      Error
+    )
+    expect(
+      () => new LinkedNode('prev', new LinkedNode('1'), undefined)
+    ).not.toThrow(Error)
+    expect(
+      () => new LinkedNode('prev', new LinkedNode('1'), '1' as any)
+    ).toThrowErrorMatchingSnapshot()
+  })
   describe('set', () => {
     describe('Happy path', () => {
       it('should set next node given a LinkedNode instance and attr next. next node should have current node as prev', () => {
@@ -76,30 +98,36 @@ describe('LinkedNode', () => {
       })
     })
     describe('Sad path', () => {
-      it('should throw if node is not an instance of LinkedNode', () => {
-        const node = new LinkedNode('node')
-
+      it('should throw if next node is not an instance of LinkedNode', () => {
         expect(() =>
-          node.set('next' as any, 'next' as any)
+          new LinkedNode('node').set('next' as any, 'next' as any)
+        ).toThrowErrorMatchingSnapshot()
+      })
+      it('should throw if prev node is not an instance of LinkedNode', () => {
+        expect(() =>
+          new LinkedNode('node').set('prev' as any, 'prev' as any)
         ).toThrowErrorMatchingSnapshot()
       })
       it('should throw if attr is not supported', () => {
-        const node = new LinkedNode('node')
-        const next = new LinkedNode('next')
-
         expect(() =>
-          node.set('random' as any, next)
+          new LinkedNode('node').set('random' as any, new LinkedNode('next'))
         ).toThrowErrorMatchingSnapshot()
       })
       it('should throw if next node is occupied', () => {
-        const next = new LinkedNode('next')
-        const node = new LinkedNode('node', undefined, next)
-        expect(() => node.set('next', next)).toThrowErrorMatchingSnapshot()
+        expect(() =>
+          new LinkedNode('node', undefined, new LinkedNode('next')).set(
+            'next',
+            new LinkedNode('new')
+          )
+        ).toThrowErrorMatchingSnapshot()
       })
       it('should throw if prev node is occupied', () => {
-        const prev = new LinkedNode('prev')
-        const node = new LinkedNode('node', prev, undefined)
-        expect(() => node.set('prev', prev)).toThrowErrorMatchingSnapshot()
+        expect(() =>
+          new LinkedNode('node', new LinkedNode('prev'), undefined).set(
+            'prev',
+            new LinkedNode('new')
+          )
+        ).toThrowErrorMatchingSnapshot()
       })
     })
   })
@@ -180,8 +208,9 @@ describe('LinkedNode', () => {
     })
     describe('Sad path', () => {
       it('should throw if attr is not supported', () => {
-        const node = new LinkedNode('node')
-        expect(() => node.unset('random' as any)).toThrowErrorMatchingSnapshot()
+        expect(() =>
+          new LinkedNode('node').unset('random' as any)
+        ).toThrowErrorMatchingSnapshot()
       })
     })
   })

@@ -18,15 +18,19 @@ export class LinkedNode<T = unknown> {
   #next: Nullable<LinkedNode<T>> = null
   constructor(
     value: T,
-    prev?: Nullable<LinkedNode<T>>,
-    next?: Nullable<LinkedNode<T>>
+    prev: Nullable<LinkedNode<T>> = null,
+    next: Nullable<LinkedNode<T>> = null
   ) {
     this.#value = value
-    if (next instanceof LinkedNode) {
+    if (LinkedNode.isLinkedNode(next)) {
       this.set(NEXT, next)
+    } else if (next !== null) {
+      throw new TypeError('next node must be of type LinkedNode')
     }
-    if (prev instanceof LinkedNode) {
+    if (LinkedNode.isLinkedNode(prev)) {
       this.set(PREV, prev)
+    } else if (prev !== null) {
+      throw new TypeError('prev node must be of type LinkedNode')
     }
   }
   static new<T>(
