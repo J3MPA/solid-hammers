@@ -1,4 +1,4 @@
-# solid-hammers v1.2.0
+# solid-hammers v0.0.1
 
 A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
 
@@ -116,7 +116,7 @@ average(numbers)
 
 > ##### returns the average of `numbers` (`number`)
 
-##### Available since: v1.2.0
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -133,7 +133,7 @@ average([20, 5, null]) // TypeError
 
 > see [average](#average)
 
-##### Available since: v1.2.0
+##### Available since: v0.0.1
 
 ### **`median`**
 
@@ -153,7 +153,7 @@ median(numbers)
 
 > ##### returns the median of `numbers` (`number`)
 
-##### Available since: v1.2.0
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -192,7 +192,7 @@ falsy(value)
 
 > ##### `true` if `value` is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy); otherwise, `false`
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -258,7 +258,7 @@ falsyOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -297,7 +297,7 @@ truthy(value)
 
 > ##### `true` if `value` is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy); otherwise, `false`
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -362,7 +362,7 @@ truthyOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -405,7 +405,7 @@ nullish(value)
 
 > ##### `true` if `value` is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -450,7 +450,7 @@ nullishOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -487,7 +487,7 @@ notNullish(value)
 
 > ##### `true` if `value` is not [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish); otherwise, `false`
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -532,7 +532,7 @@ notNullishOr(defaultValue, value)
 
 > ##### `defaultValue` if evaluation is false; otherwise, `value`
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -574,7 +574,7 @@ invokeAfter(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -618,7 +618,7 @@ invokeUntil(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -662,7 +662,7 @@ invokeOn(nthTime, fn)
 
 > ##### new function with nth time call restriction
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -702,7 +702,7 @@ invokeOnce(fn)
 
 > ##### new function with one time call restriction
 
-##### Available since: v1.0.5
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -748,7 +748,7 @@ getValue(path, object)
 
 > ##### the value found at the end of the path; otherwise `undefined`
 
-##### Available since: v1.2.0
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -790,7 +790,7 @@ getValueOr(defaultValue, path, object)
 
 > ##### the value found at the end of the path; otherwise `defaultValue`
 
-##### Available since: v1.2.0
+##### Available since: v0.0.1
 
 #### Examples
 
@@ -828,7 +828,7 @@ hasDepth(object)
 
 > ##### true of `object` has any properties; otherwise false
 
-##### Available since: v1.2.0
+##### Available since: v0.0.1
 
 #### Examples
 

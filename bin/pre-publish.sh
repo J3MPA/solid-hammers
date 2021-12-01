@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-yarn test && tsc --noEmit false
+yarn test && yarn build
