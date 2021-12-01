@@ -12,9 +12,19 @@
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
-    "**/*.d.ts",
-    "**/*.js.map",
-    "**/*.js"
+    "functions/**/*.d.ts",
+    "functions/**/*.js.map",
+    "functions/**/*.js",
+    "math/**/*.d.ts",
+    "math/**/*.js.map",
+    "math/**/*.js",
+    "data/**/*.d.ts",
+    "data/**/*.js.map",
+    "data/**/*.js",
+    "/types",
+    "index.d.ts",
+    "index.js.map",
+    "index.js"
   ],
   "scripts": {
     "lint": "eslint . --ext .ts",
