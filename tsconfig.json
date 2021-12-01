@@ -2,15 +2,16 @@
   "compilerOptions": {
     "noEmit": true,
     "target": "ES6",
-    "module": "CommonJs",
+    "module": "umd",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "strict": true,
     "outDir": ".",
-    "sourceMap": false,
+    "sourceMap": true,
     "declaration": true,
-    "resolveJsonModule": true,
     "noUncheckedIndexedAccess": true,
     "useUnknownInCatchVariables": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.*", "**/*.config.ts"]
+  "exclude": ["node_modules", "**/*.config.ts"]
 }

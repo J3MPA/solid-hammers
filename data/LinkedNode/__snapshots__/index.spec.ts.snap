@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkedNode link Sad path should throw if attr is not supported 1`] = `"Can't link attribute random, supported attributes: next | prev"`;
+
+exports[`LinkedNode link Sad path should throw if next node is not an instance of LinkedNode 1`] = `"next node must be of type LinkedNode"`;
+
+exports[`LinkedNode link Sad path should throw if next node is occupied 1`] = `"Can't link next node, it's occupied by another node, use change(attr, node) to unsafely link next node or unlink(attr) before link(attr, node)"`;
+
+exports[`LinkedNode link Sad path should throw if prev node is not an instance of LinkedNode 1`] = `"prev node must be of type LinkedNode"`;
+
+exports[`LinkedNode link Sad path should throw if prev node is occupied 1`] = `"Can't link prev node, it's occupied by another node, use change(attr, node) to unsafely link prev node or unlink(attr) before link(attr, node)"`;
+
+exports[`LinkedNode should throw error if LinkedNode is instantiated with next as non nullish LinkedNode 1`] = `"next node must be of type LinkedNode"`;
+
+exports[`LinkedNode should throw error if LinkedNode is instantiated with prev as non nullish LinkedNode 1`] = `"prev node must be of type LinkedNode"`;
+
+exports[`LinkedNode unlink Sad path should throw if attr is not supported 1`] = `"Can't unlink attribute random, supported attributes: next | prev"`;
