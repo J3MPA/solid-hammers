@@ -2,12 +2,13 @@
   "compilerOptions": {
     "noEmit": true,
     "target": "ES6",
-    "module": "CommonJs",
+    "module": "umd",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "strict": true,
     "outDir": ".",
     "sourceMap": true,
     "declaration": true,
-    "resolveJsonModule": true,
     "noUncheckedIndexedAccess": true,
     "useUnknownInCatchVariables": true
   },

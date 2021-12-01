@@ -19,6 +19,7 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "build": "tsc --project ./tsconfig.build.json",
+    "build:clean": " tsc --build --clean",
     "check:types": "tsc --noEmit true",
     "test": "yarn test:unit",
     "test:coverage": "yarn test:unit --coverage",
