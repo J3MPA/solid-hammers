@@ -2,17 +2,16 @@ name: CI
 
 on:
   push:
-    branches: [master]
+    branches: 
+      - master
   pull_request:
-    branches: [master]
-  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [12, 14, 16]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -20,7 +19,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: yarn
       - name: Install dependencies
         run: yarn install
       - name: Run tests
