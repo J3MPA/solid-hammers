@@ -38,6 +38,8 @@ A set of JavaScript (ES6) functions and classes for all occasions. Ships with Ty
       1. [getValue](#getValue)
       2. [getValueOr](#getValueOr)
       3. [hasDepth](#hasDepth)
+   4. [Array](#array)
+      1. [enumerate](#enumerate)
 
 ## Installation
 
@@ -839,4 +841,86 @@ hasDepth(null) // false
 hasDepth([]) // false
 hasDepth([1, 2, 3, 4]) // false
 hasDepth([[1], [2]]) // false
+```
+
+### Array
+
+### **`enumerate`**
+
+> Creates an enumeration iterator from an array much like `Object.entries`
+
+Generic TypeScript method
+
+#### Syntax
+
+```es6
+enumerate(array)
+```
+
+#### Parameters
+
+> ##### `array` the array to enumerate
+
+#### Return value
+
+> ##### iterator and `toArray` method that converts the iterator to an array `[number,T][]`
+
+##### Available since: v0.1.0
+
+#### Examples
+
+```es6
+const iter = enumerate(['a', 'b', 'c'])
+
+for (const [i, value] of iter) {
+  if (i === 0 || value === 'b') {
+    // do something
+  }
+}
+
+const array = iter.toArray()
+```
+
+### **`range`**
+
+> Creates a rage iterator
+
+#### Syntax
+
+```es6
+range(to, options)
+range(params, options)
+```
+
+#### Parameters
+
+> ##### `to` the number to create a range to e.g. 10
+>
+> ##### `params` an object to specify `from` and `to` value (numbers)
+>
+> ##### `options` an optional object, `options.include: boolean` to include the to value in the range, default false
+
+#### Return value
+
+> ##### iterator and `toArray` method that converts the iterator to an array `number[]`
+
+##### Available since: v0.1.0
+
+#### Examples
+
+```es6
+range(5) // [0, 1, 2, 3, 4]
+range(5, { include: true }) // [0, 1, 2, 3, 4, 5]
+range({ to: 5 }) // [0, 1, 2, 3, 4]
+range({ to: 5, from: 2 }) // [2, 3, 4]
+range({ to: 5 }, { include: true }) // [0, 1, 2, 3, 4, 5]
+range({ to: 5, from: 2 }, { include }) // [2, 3, 4, 5]
+
+for (const [i, value] of iter) {
+  if (i === 0 || value === 'b') {
+    // do something
+  }
+}
+
+const array = iter.toArray()
 ```
