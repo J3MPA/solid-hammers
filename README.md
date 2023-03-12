@@ -865,7 +865,7 @@ enumerate(array)
 
 > ##### iterator and `toArray` method that converts the iterator to an array `[number,T][]`
 
-##### Available since: v0.1.0
+##### Available since: UPDATE ON NEXT RELEASE
 
 #### Examples
 
@@ -904,7 +904,7 @@ range(params, options)
 
 > ##### iterator and `toArray` method that converts the iterator to an array `number[]`
 
-##### Available since: v0.1.0
+##### Available since: UPDATE ON NEXT RELEASE
 
 #### Examples
 
