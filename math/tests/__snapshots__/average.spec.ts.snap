@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`average Sad path should trow type error if one of given numbers is not a real number 1`] = `"\\"10\\" is not a real number"`;
+exports[`average Sad path should trow type error if one of given numbers is not a real number 1`] = `""10" is not a real number"`;
 
-exports[`average Sad path should trow type error if one of given numbers is not a real number 2`] = `"\\"null\\" is not a real number"`;
+exports[`average Sad path should trow type error if one of given numbers is not a real number 2`] = `""null" is not a real number"`;
 
-exports[`average Sad path should trow type error if one of given numbers is not a real number 3`] = `"\\"undefined\\" is not a real number"`;
+exports[`average Sad path should trow type error if one of given numbers is not a real number 3`] = `""undefined" is not a real number"`;
 
-exports[`average Sad path should trow type error if one of given numbers is not a real number 4`] = `"\\"NaN\\" is not a real number"`;
+exports[`average Sad path should trow type error if one of given numbers is not a real number 4`] = `""NaN" is not a real number"`;
 
-exports[`average Sad path should trow type error if one of given numbers is not a real number 5`] = `"\\"Infinity\\" is not a real number"`;
+exports[`average Sad path should trow type error if one of given numbers is not a real number 5`] = `""Infinity" is not a real number"`;
 
-exports[`average Sad path should trow type error if one of given numbers is not a real number 6`] = `"\\"\\" is not a real number"`;
+exports[`average Sad path should trow type error if one of given numbers is not a real number 6`] = `""" is not a real number"`;
 
-exports[`average Sad path should trow type error if one of given numbers is not a real number 7`] = `"\\"[object Object]\\" is not a real number"`;
+exports[`average Sad path should trow type error if one of given numbers is not a real number 7`] = `""[object Object]" is not a real number"`;
 
-exports[`average Sad path should trow type error if one of given numbers is not a real number 8`] = `"\\"\\" is not a real number"`;
+exports[`average Sad path should trow type error if one of given numbers is not a real number 8`] = `""" is not a real number"`;
