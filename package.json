@@ -27,27 +27,27 @@
     "index.js"
   ],
   "scripts": {
-    "lint": "eslint . --ext .ts",
-    "build": "tsc --project ./tsconfig.build.json",
     "build:clean": " tsc --build --clean",
+    "build": "tsc --project ./tsconfig.build.json",
     "check:types": "tsc --noEmit true",
-    "test": "yarn test:unit",
+    "lint": "eslint . --ext .ts",
+    "postpublish": "./bin/post-publish.sh",
+    "prepublishOnly": "./bin/pre-publish.sh",
+    "publish:dry-run": "npm publish --dry-run",
     "test:coverage": "yarn test:unit --coverage",
     "test:unit": "jest",
-    "publish:dry-run": "npm publish --dry-run",
-    "prepublishOnly": "./bin/pre-publish.sh",
-    "postpublish": "./bin/post-publish.sh"
+    "test": "yarn test:unit"
   },
   "devDependencies": {
-    "@types/jest": "27.0.3",
-    "@types/node": "16.11.10",
-    "@typescript-eslint/eslint-plugin": "5.4.0",
-    "@typescript-eslint/parser": "5.4.0",
-    "eslint": "8.3.0",
-    "jest": "27.3.1",
-    "ts-jest": "27.0.7",
-    "ts-node": "10.4.0",
-    "typescript": "4.5.2"
+    "@types/jest": "29.4.0",
+    "@types/node": "18.15.0",
+    "@typescript-eslint/eslint-plugin": "5.54.1",
+    "@typescript-eslint/parser": "5.54.1",
+    "eslint": "8.36.0",
+    "jest": "29.5.0",
+    "ts-jest": "29.0.5",
+    "ts-node": "10.9.1",
+    "typescript": "4.9.5"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
