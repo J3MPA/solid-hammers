@@ -34,6 +34,7 @@ A set of JavaScript (ES6) functions and classes for all occasions. Ships with Ty
       3. [invokeUntil](#invokeUntil)
       4. [invokeOn](#invokeOn)
       5. [invokeOnce](#invokeOnce)
+      6. [debounce](#debounce)
    3. [Object](#object)
       1. [getValue](#getValue)
       2. [getValueOr](#getValueOr)
@@ -947,15 +948,15 @@ range(params, options)
 #### Examples
 
 ```es6
-range(5) // [0, 1, 2, 3, 4]
-range(5, { include: true }) // [0, 1, 2, 3, 4, 5]
-range({ to: 5 }) // [0, 1, 2, 3, 4]
-range({ to: 5, from: 2 }) // [2, 3, 4]
-range({ to: 5 }, { include: true }) // [0, 1, 2, 3, 4, 5]
-range({ to: 5, from: 2 }, { include }) // [2, 3, 4, 5]
+const iter = range(5) // [0, 1, 2, 3, 4]
+const iter = range(5, { include: true }) // [0, 1, 2, 3, 4, 5]
+const iter = range({ to: 5 }) // [0, 1, 2, 3, 4]
+const iter = range({ to: 5, from: 2 }) // [2, 3, 4]
+const iter = range({ to: 5 }, { include: true }) // [0, 1, 2, 3, 4, 5]
+const iter = range({ to: 5, from: 2 }, { include }) // [2, 3, 4, 5]
 
-for (const [i, value] of iter) {
-  if (i === 0 || value === 'b') {
+for (const i of iter) {
+  if (i === 0) {
     // do something
   }
 }

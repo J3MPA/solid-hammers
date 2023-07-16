@@ -1,5 +1,5 @@
-export { Vector2 } from './Vector2'
 export { average, average as avg } from './average'
-export { isOdd } from './isOdd'
 export { isEven } from './isEven'
+export { isOdd } from './isOdd'
 export { median } from './median'
+export { Vector2 } from './Vector2'
