@@ -726,6 +726,44 @@ for (let i = 1; i <= 4; i++) {
 // 4
 ```
 
+### **`debounce`**
+
+> Creates a debounced function that returns a promise. If the debounced function is invoked multiple times all promises that is created will resolve with the final value or reject
+
+#### Syntax
+
+```es6
+debounce(fn, delay)
+```
+
+#### Parameters
+
+> ##### `fn` the function to be invoked
+
+> ##### `delay` the debounce delay in milliseconds
+
+#### Return value
+
+> ##### new debounced function
+
+##### Available since: UPDATE ON NEXT RELEASE
+
+#### Examples
+
+```es6
+const fetch = debounce(getData, 1000)
+
+const promise = fetch() // Promise 1
+const promise2 = fetch() // Promise 2
+
+// delay elapsed
+
+const response = await promise
+const response2 = await promise2
+
+const isSame = response === response2 // true, all promises will resolve with the same value
+```
+
 ### Object
 
 ### **`getValue`**
