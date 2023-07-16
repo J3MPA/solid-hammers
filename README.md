@@ -750,7 +750,7 @@ debounce(fn, delay)
 
 > ##### new debounced function
 
-##### Available since: UPDATE ON NEXT RELEASE
+##### Available since: v0.1.0
 
 #### Examples
 
@@ -790,7 +790,7 @@ throttle(fn, duration)
 
 > ##### new throttled function
 
-##### Available since: UPDATE ON NEXT RELEASE
+##### Available since: v0.1.0
 
 #### Examples
 
@@ -949,7 +949,7 @@ enumerate(array)
 
 > ##### iterator and `toArray` method that converts the iterator to an array `[number,T][]`
 
-##### Available since: UPDATE ON NEXT RELEASE
+##### Available since: v0.1.0
 
 #### Examples
 
@@ -988,7 +988,7 @@ range(params, options)
 
 > ##### iterator and `toArray` method that converts the iterator to an array `number[]`
 
-##### Available since: UPDATE ON NEXT RELEASE
+##### Available since: v0.1.0
 
 #### Examples
 
