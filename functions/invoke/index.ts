@@ -1,4 +1,5 @@
+export { debounce } from './debounce'
 export { invokeAfter } from './invokeAfter'
-export { invokeUntil } from './invokeUntil'
 export { invokeOn } from './invokeOn'
 export { invokeOnce } from './invokeOnce'
+export { invokeUntil } from './invokeUntil'

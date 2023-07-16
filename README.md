@@ -34,6 +34,7 @@ A set of JavaScript (ES6) functions and classes for all occasions. Ships with Ty
       3. [invokeUntil](#invokeUntil)
       4. [invokeOn](#invokeOn)
       5. [invokeOnce](#invokeOnce)
+      6. [debounce](#debounce)
    3. [Object](#object)
       1. [getValue](#getValue)
       2. [getValueOr](#getValueOr)
