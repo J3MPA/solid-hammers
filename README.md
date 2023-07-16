@@ -760,10 +760,12 @@ const promise2 = fetch() // Promise 2
 
 // delay elapsed
 
+const isSamePromise = promise === promise2 // false, different promises
+
 const response = await promise
 const response2 = await promise2
 
-const isSame = response === response2 // true, all promises will resolve with the same value
+const isSameResponse = response === response2 // true, all promises will resolve with the same value
 ```
 
 ### **`throttle`**
@@ -797,6 +799,8 @@ const promise = fetch() // Promise 1
 const promise2 = fetch() // Promise 2
 
 // duration elapsed
+
+const isSamePromise = promise === promise2 // true, promise is cached from first invocation
 
 const response = await promise
 const response2 = await promise2
