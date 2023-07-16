@@ -1,5 +1,7 @@
 # solid-hammers v0.0.2
 
+![Build](https://github.com/j3mpa/solid-hammers/actions/workflows/ci.yml/badge.svg)
+
 A set of JavaScript (ES6) functions and classes for all occasions. Ships with TypeScript support.
 
 `This package i still under development and will ship with more functions and classes with time`
