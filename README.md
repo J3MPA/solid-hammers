@@ -35,6 +35,7 @@ A set of JavaScript (ES6) functions and classes for all occasions. Ships with Ty
       4. [invokeOn](#invokeOn)
       5. [invokeOnce](#invokeOnce)
       6. [debounce](#debounce)
+      7. [throttle](#throttle)
    3. [Object](#object)
       1. [getValue](#getValue)
       2. [getValueOr](#getValueOr)
@@ -763,6 +764,44 @@ const response = await promise
 const response2 = await promise2
 
 const isSame = response === response2 // true, all promises will resolve with the same value
+```
+
+### **`throttle`**
+
+> Creates a throttled function. It will cache the response of the first invocation and return it if the throttled function is invoked during throttle duration
+
+#### Syntax
+
+```es6
+throttle(fn, duration)
+```
+
+#### Parameters
+
+> ##### `fn` the function to be invoked
+
+> ##### `duration` the throttle duration in milliseconds
+
+#### Return value
+
+> ##### new throttled function
+
+##### Available since: UPDATE ON NEXT RELEASE
+
+#### Examples
+
+```es6
+const fetch = throttle(getData, 1000)
+
+const promise = fetch() // Promise 1
+const promise2 = fetch() // Promise 2
+
+// duration elapsed
+
+const response = await promise
+const response2 = await promise2
+
+const isSame = response === response2 // true, since the response is cached from the first invocation
 ```
 
 ### Object
