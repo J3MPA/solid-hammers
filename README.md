@@ -1,4 +1,4 @@
-# solid-hammers v0.0.2
+# solid-hammers
 
 [![CI Status](https://github.com/j3mpa/solid-hammers/actions/workflows/ci.yml/badge.svg)](https://github.com/j3mpa/solid-hammers/actions/workflows/ci.yml/badge.svg) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/j3mpa/solid-hammers/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/solid-hammers.svg?style=flat)](https://www.npmjs.com/package/solid-hammers)
 
