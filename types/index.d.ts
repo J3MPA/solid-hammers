@@ -27,3 +27,5 @@ export type Path<P extends readonly any[], O extends WeakObj> = P extends [
     ? Path<PR, ExtractObjectProperty<O, P0>>
     : O[P0]
   : O
+
+export type Milliseconds = number
