@@ -20,6 +20,7 @@ export {
 } from './notStrictEqual'
 export { nullish, nullish as isNullish } from './nullish'
 export { nullishOr } from './nullishOr'
+export { serializes } from './serializes'
 export { strictEqual, strictEqual as isStrictEqual } from './strictEqual'
 export { truthy, truthy as isTruthy } from './truthy'
 export { truthyOr } from './truthyOr'
